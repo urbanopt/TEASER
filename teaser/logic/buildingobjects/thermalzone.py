@@ -1297,11 +1297,27 @@ class ThermalZone(object):
     def retrofit_zone(self, window_type=None, material=None):
         """Retrofits all walls and windows in the zone.
         """
+        #
+        # for wall_count in self.outer_walls:
+        #     wall_count.retrofit_wall(self.parent.year_of_retrofit, material)
+        # for win_count in self.windows:
+        #     win_count.replace_window(self.parent.year_of_retrofit, window_type)
 
-        for wall_count in self.outer_walls:
-            wall_count.retrofit_wall(self.parent.year_of_retrofit, material)
-        for win_count in self.windows:
-            win_count.replace_window(self.parent.year_of_retrofit, window_type)
+        ### added by bruentjen if only one parameter should be changed
+        if window_type is None and material is None:
+            for wall_count in self.outer_walls:
+                wall_count.retrofit_wall(self.parent.year_of_retrofit, material)
+            for win_count in self.windows:
+                win_count.replace_window(self.parent.year_of_retrofit, window_type)
+        elif window_type is None and material is False:
+            for win_count in self.windows:
+                win_count.replace_window(self.parent.year_of_retrofit, window_type)
+        elif window_type is False and material is None:
+            for wall_count in self.outer_walls:
+                wall_count.retrofit_wall(self.parent.year_of_retrofit, material)
+        else:
+            pass
+
 
     def set_calc_default(self):
         """sets default calculation parameters
