@@ -336,10 +336,10 @@ class ThermalZone(object):
         if window_type is None and material is None:
             for wall_count in self.outer_walls:
                 wall_count.retrofit_wall(self.parent.year_of_retrofit, material)
-	        for roof_count in self.rooftops:
-	            roof_count.retrofit_wall(self.parent.year_of_retrofit, material)
-	        for ground_count in self.ground_floors:
-	            ground_count.retrofit_wall(self.parent.year_of_retrofit, material)
+            for roof_count in self.rooftops:
+                roof_count.retrofit_wall(self.parent.year_of_retrofit, material)
+            for ground_count in self.ground_floors:
+                ground_count.retrofit_wall(self.parent.year_of_retrofit, material)
             for win_count in self.windows:
                 win_count.replace_window(self.parent.year_of_retrofit, window_type)
         elif window_type is None and material is False:
@@ -348,10 +348,10 @@ class ThermalZone(object):
         elif window_type is False and material is None:
             for wall_count in self.outer_walls:
                 wall_count.retrofit_wall(self.parent.year_of_retrofit, material)
-	        for roof_count in self.rooftops:
-	            roof_count.retrofit_wall(self.parent.year_of_retrofit, material)
-	        for ground_count in self.ground_floors:
-	            ground_count.retrofit_wall(self.parent.year_of_retrofit, material)
+            for roof_count in self.rooftops:
+                roof_count.retrofit_wall(self.parent.year_of_retrofit, material)
+            for ground_count in self.ground_floors:
+                ground_count.retrofit_wall(self.parent.year_of_retrofit, material)
         else:
             pass
 
