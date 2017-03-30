@@ -571,72 +571,75 @@ supported for Annex60)</p>
 <td>(float [W/(m2K)]) Area-weighted combined coefficient of heat transfer of windows facing the ambient.</td>
 </tr>
 <tr class="row-even"><td>ua_value_win</td>
-<td>(float [W/K]) U-Value times outer wall area.</td>
+<td>(float [W/K]) U-Value times window wall area.</td>
 </tr>
-<tr class="row-odd"><td>r_conv_inner_win</td>
+<tr class="row-odd"><td>u_value_win</td>
+<td>(float [W/(m2K)]) Area weighted U-Value of windows.</td>
+</tr>
+<tr class="row-even"><td>r_conv_inner_win</td>
 <td>(float [K/W]) Sum of convective resistances for all windows facing the inside of this thermal zone.</td>
 </tr>
-<tr class="row-even"><td>r_rad_inner_win</td>
+<tr class="row-odd"><td>r_rad_inner_win</td>
 <td>(float [K/W]) Sum of radiative resistances for all windows facing the inside of this thermal zone.</td>
 </tr>
-<tr class="row-odd"><td>r_comb_inner_win</td>
+<tr class="row-even"><td>r_comb_inner_win</td>
 <td>(float [K/W]) Sum of combined resistances for all windows facing the inside of this thermal zone.</td>
 </tr>
-<tr class="row-even"><td>r_conv_outer_win</td>
+<tr class="row-odd"><td>r_conv_outer_win</td>
 <td>(float [K/W]) Sum of convective resistances for all windows facing the ambient.</td>
 </tr>
-<tr class="row-odd"><td>r_rad_outer_win</td>
+<tr class="row-even"><td>r_rad_outer_win</td>
 <td>(float [K/W]) Sum of radiative resistances for all windows facing the ambient.</td>
 </tr>
-<tr class="row-even"><td>r_comb_outer_win</td>
+<tr class="row-odd"><td>r_comb_outer_win</td>
 <td>(float [K/W]) Sum of combined resistances for all windows facing the ambient.</td>
 </tr>
-<tr class="row-odd"><td>r1_win</td>
+<tr class="row-even"><td>r1_win</td>
 <td>(float [K/W]) Lumped resistance of windows, no heat transfer coefficients for convection and radiation are accounted in this resistance.</td>
 </tr>
-<tr class="row-even"><td>weightfactor_win</td>
+<tr class="row-odd"><td>weightfactor_win</td>
 <td>(list of floats) Weightfactors of windows (UA-Value of windows with same orientation and tilt divided by ua_value_win or ua_value_win+ua_value_ow, depending if windows is lumped/merged into the walls or not)</td>
 </tr>
-<tr class="row-odd"><td>window_areas</td>
+<tr class="row-even"><td>window_areas</td>
 <td>(list of floats [m2]) Area of all windows in one list, if the windows are merged into the outer wall this list will be full of zeros</td>
 </tr>
-<tr class="row-even"><td>transparent_areas</td>
+<tr class="row-odd"><td>transparent_areas</td>
 <td>(list of floats [m2]) Area of all transparent elements (most likely windows) in one list, this list will be always filled with the areas, independent if windows are merged into walls or not.</td>
 </tr>
-<tr class="row-odd"><td>solar_absorp_win</td>
+<tr class="row-even"><td>solar_absorp_win</td>
 <td>(float) Area-weighted solar absorption for windows. (typically 0.0)</td>
 </tr>
-<tr class="row-even"><td>ir_emissivity_win</td>
+<tr class="row-odd"><td>ir_emissivity_win</td>
 <td>(float) Area-weighted ir_emissivity for windows. Can be used for windows facing the thermal zone and the ambient.</td>
 </tr>
-<tr class="row-odd"><td>weighted_g_value</td>
+<tr class="row-even"><td>weighted_g_value</td>
 <td>(float) Area-weighted g-Value of all windows.</td>
 </tr>
-<tr class="row-even"><td>g_sunblind</td>
+<tr class="row-odd"><td>g_sunblind</td>
 <td>(list of floats) G-Value of all sunblinds of each window in a list</td>
 </tr>
-<tr class="row-odd"><td>Misc values:</td>
+<tr class="row-even"><td>Misc values:</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>alpha_rad_inner_mean</td>
+<tr class="row-odd"><td>alpha_rad_inner_mean</td>
 <td>(float [W/(m2K)]) Area-weighted radiative coefficient of all surfaces facing the inside of this thermal zone (OuterWalls, Windows, InnerWalls, ...).</td>
 </tr>
-<tr class="row-odd"><td>alpha_rad_outer_mean</td>
+<tr class="row-even"><td>alpha_rad_outer_mean</td>
 <td>(float [W/(m2K)]) Area-weighted radiative coefficient of all surfaces facing the ambient (OuterWalls, Windows, ...).</td>
 </tr>
-<tr class="row-even"><td>heat_load</td>
+<tr class="row-odd"><td>heat_load</td>
 <td>([W]) Static heat load of the thermal zone.</td>
 </tr>
-<tr class="row-odd"><td>facade_areas</td>
+<tr class="row-even"><td>facade_areas</td>
 <td>(list of floats [m2]) List containing the area of each facade (with same tilt and orientation) this includes also roofs and ground floors and windows.</td>
 </tr>
-<tr class="row-even"><td>n_outer</td>
+<tr class="row-odd"><td>n_outer</td>
 <td>(int) Number of total facades with different combination of tilt and orientation, including Rooftops and GroundFloors</td>
 </tr>
-<tr class="row-odd"><td>tilt_facade</td>
+<tr class="row-even"><td>tilt_facade</td>
 <td>(list of floats [degree]) Tilt of facades against the horizontal.</td>
 </tr>
-<tr class="row-even"><td>orientation_facade</td>
+<tr class="row-odd"><td>orientation_facade</td>
 <td>(list of floats [degree]) Orientation of facades (Azimuth). 0 - North 90 - East 180 - South 270 - West</td>
 </tr>
 </tbody>
@@ -853,72 +856,75 @@ supported for Annex60)</p>
 <td>(float [W/(m2K)]) Area-weighted combined coefficient of heat transfer of windows facing the ambient.</td>
 </tr>
 <tr class="row-odd"><td>ua_value_win</td>
-<td>(float [W/K]) U-Value times outer wall area.</td>
+<td>(float [W/K]) U-Value times window wall area.</td>
 </tr>
-<tr class="row-even"><td>r_conv_inner_win</td>
+<tr class="row-even"><td>u_value_win</td>
+<td>(float [W/(m2K)]) Area weighted U-Value of windows.</td>
+</tr>
+<tr class="row-odd"><td>r_conv_inner_win</td>
 <td>(float [K/W]) Sum of convective resistances for all windows facing the inside of this thermal zone.</td>
 </tr>
-<tr class="row-odd"><td>r_rad_inner_win</td>
+<tr class="row-even"><td>r_rad_inner_win</td>
 <td>(float [K/W]) Sum of radiative resistances for all windows facing the inside of this thermal zone.</td>
 </tr>
-<tr class="row-even"><td>r_comb_inner_win</td>
+<tr class="row-odd"><td>r_comb_inner_win</td>
 <td>(float [K/W]) Sum of combined resistances for all windows facing the inside of this thermal zone.</td>
 </tr>
-<tr class="row-odd"><td>r_conv_outer_win</td>
+<tr class="row-even"><td>r_conv_outer_win</td>
 <td>(float [K/W]) Sum of convective resistances for all windows facing the ambient.</td>
 </tr>
-<tr class="row-even"><td>r_rad_outer_win</td>
+<tr class="row-odd"><td>r_rad_outer_win</td>
 <td>(float [K/W]) Sum of radiative resistances for all windows facing the ambient.</td>
 </tr>
-<tr class="row-odd"><td>r_comb_outer_win</td>
+<tr class="row-even"><td>r_comb_outer_win</td>
 <td>(float [K/W]) Sum of combined resistances for all windows facing the ambient.</td>
 </tr>
-<tr class="row-even"><td>r1_win</td>
+<tr class="row-odd"><td>r1_win</td>
 <td>(float [K/W]) Lumped resistance of windows, no heat transfer coefficients for convection and radiation are accounted in this resistance.</td>
 </tr>
-<tr class="row-odd"><td>weightfactor_win</td>
+<tr class="row-even"><td>weightfactor_win</td>
 <td>(list of floats) Weightfactors of windows (UA-Value of windows with same orientation and tilt divided by ua_value_win or ua_value_win+ua_value_ow, depending if windows is lumped/merged into the walls or not)</td>
 </tr>
-<tr class="row-even"><td>window_areas</td>
+<tr class="row-odd"><td>window_areas</td>
 <td>(list of floats [m2]) Area of all windows in one list, if the windows are merged into the outer wall this list will be full of zeros</td>
 </tr>
-<tr class="row-odd"><td>transparent_areas</td>
+<tr class="row-even"><td>transparent_areas</td>
 <td>(list of floats [m2]) Area of all transparent elements (most likely windows) in one list, this list will be always filled with the areas, independent if windows are merged into walls or not.</td>
 </tr>
-<tr class="row-even"><td>solar_absorp_win</td>
+<tr class="row-odd"><td>solar_absorp_win</td>
 <td>(float) Area-weighted solar absorption for windows. (typically 0.0)</td>
 </tr>
-<tr class="row-odd"><td>ir_emissivity_win</td>
+<tr class="row-even"><td>ir_emissivity_win</td>
 <td>(float) Area-weighted ir_emissivity for windows. Can be used for windows facing the thermal zone and the ambient.</td>
 </tr>
-<tr class="row-even"><td>weighted_g_value</td>
+<tr class="row-odd"><td>weighted_g_value</td>
 <td>(float) Area-weighted g-Value of all windows.</td>
 </tr>
-<tr class="row-odd"><td>g_sunblind</td>
+<tr class="row-even"><td>g_sunblind</td>
 <td>(list of floats) G-Value of all sunblinds of each window in a list</td>
 </tr>
-<tr class="row-even"><td>Misc values:</td>
+<tr class="row-odd"><td>Misc values:</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>alpha_rad_inner_mean</td>
+<tr class="row-even"><td>alpha_rad_inner_mean</td>
 <td>(float [W/(m2K)]) Area-weighted radiative coefficient of all surfaces facing the inside of this thermal zone (OuterWalls, Windows, InnerWalls, ...).</td>
 </tr>
-<tr class="row-even"><td>alpha_rad_outer_mean</td>
+<tr class="row-odd"><td>alpha_rad_outer_mean</td>
 <td>(float [W/(m2K)]) Area-weighted radiative coefficient of all surfaces facing the ambient (OuterWalls, Windows, ...).</td>
 </tr>
-<tr class="row-odd"><td>heat_load</td>
+<tr class="row-even"><td>heat_load</td>
 <td>([W]) Static heat load of the thermal zone.</td>
 </tr>
-<tr class="row-even"><td>facade_areas</td>
+<tr class="row-odd"><td>facade_areas</td>
 <td>(list of floats [m2]) List containing the area of each facade (with same tilt and orientation) this includes also roofs and ground floors and windows.</td>
 </tr>
-<tr class="row-odd"><td>n_outer</td>
+<tr class="row-even"><td>n_outer</td>
 <td>(int) Number of total facades with different combination of tilt and orientation, including Rooftops and GroundFloors</td>
 </tr>
-<tr class="row-even"><td>tilt_facade</td>
+<tr class="row-odd"><td>tilt_facade</td>
 <td>(list of floats [degree]) Tilt of facades against the horizontal.</td>
 </tr>
-<tr class="row-odd"><td>orientation_facade</td>
+<tr class="row-even"><td>orientation_facade</td>
 <td>(list of floats [degree]) Orientation of facades (Azimuth). 0 - North 90 - East 180 - South 270 - West</td>
 </tr>
 </tbody>
@@ -1178,70 +1184,73 @@ supported for Annex60)</p>
 <tr class="row-odd"><td>ua_value_win</td>
 <td>(float [W/K]) U-Value times outer wall area.</td>
 </tr>
-<tr class="row-even"><td>r_conv_inner_win</td>
+<tr class="row-even"><td>u_value_win</td>
+<td>(float [W/(m2K)]) Area weighted U-Value of windows.</td>
+</tr>
+<tr class="row-odd"><td>r_conv_inner_win</td>
 <td>(float [K/W]) Sum of convective resistances for all windows facing the inside of this thermal zone.</td>
 </tr>
-<tr class="row-odd"><td>r_rad_inner_win</td>
+<tr class="row-even"><td>r_rad_inner_win</td>
 <td>(float [K/W]) Sum of radiative resistances for all windows facing the inside of this thermal zone.</td>
 </tr>
-<tr class="row-even"><td>r_comb_inner_win</td>
+<tr class="row-odd"><td>r_comb_inner_win</td>
 <td>(float [K/W]) Sum of combined resistances for all windows facing the inside of this thermal zone.</td>
 </tr>
-<tr class="row-odd"><td>r_conv_outer_win</td>
+<tr class="row-even"><td>r_conv_outer_win</td>
 <td>(float [K/W]) Sum of convective resistances for all windows facing the ambient.</td>
 </tr>
-<tr class="row-even"><td>r_rad_outer_win</td>
+<tr class="row-odd"><td>r_rad_outer_win</td>
 <td>(float [K/W]) Sum of radiative resistances for all windows facing the ambient.</td>
 </tr>
-<tr class="row-odd"><td>r_comb_outer_win</td>
+<tr class="row-even"><td>r_comb_outer_win</td>
 <td>(float [K/W]) Sum of combined resistances for all windows facing the ambient.</td>
 </tr>
-<tr class="row-even"><td>r1_win</td>
+<tr class="row-odd"><td>r1_win</td>
 <td>(float [K/W]) Lumped resistance of windows, no heat transfer coefficients for convection and radiation are accounted in this resistance.</td>
 </tr>
-<tr class="row-odd"><td>weightfactor_win</td>
+<tr class="row-even"><td>weightfactor_win</td>
 <td>(list of floats) Weightfactors of windows (UA-Value of windows with same orientation and tilt divided by ua_value_win or ua_value_win+ua_value_ow, depending if windows is lumped/merged into the walls or not)</td>
 </tr>
-<tr class="row-even"><td>window_areas</td>
+<tr class="row-odd"><td>window_areas</td>
 <td>(list of floats [m2]) Area of all windows in one list, if the windows are merged into the outer wall this list will be full of zeros</td>
 </tr>
-<tr class="row-odd"><td>transparent_areas</td>
+<tr class="row-even"><td>transparent_areas</td>
 <td>(list of floats [m2]) Area of all transparent elements (most likely windows) in one list, this list will be always filled with the areas, independent if windows are merged into walls or not.</td>
 </tr>
-<tr class="row-even"><td>solar_absorp_win</td>
+<tr class="row-odd"><td>solar_absorp_win</td>
 <td>(float) Area-weighted solar absorption for windows. (typically 0.0)</td>
 </tr>
-<tr class="row-odd"><td>ir_emissivity_win</td>
+<tr class="row-even"><td>ir_emissivity_win</td>
 <td>(float) Area-weighted ir_emissivity for windows. Can be used for windows facing the thermal zone and the ambient.</td>
 </tr>
-<tr class="row-even"><td>weighted_g_value</td>
+<tr class="row-odd"><td>weighted_g_value</td>
 <td>(float) Area-weighted g-Value of all windows.</td>
 </tr>
-<tr class="row-odd"><td>g_sunblind</td>
+<tr class="row-even"><td>g_sunblind</td>
 <td>(list of floats) G-Value of all sunblinds of each window in a list</td>
 </tr>
-<tr class="row-even"><td>Misc values:</td>
+<tr class="row-odd"><td>Misc values:</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>alpha_rad_inner_mean</td>
+<tr class="row-even"><td>alpha_rad_inner_mean</td>
 <td>(float [W/(m2K)]) Area-weighted radiative coefficient of all surfaces facing the inside of this thermal zone (OuterWalls, Windows, InnerWalls, ...).</td>
 </tr>
-<tr class="row-even"><td>alpha_rad_outer_mean</td>
+<tr class="row-odd"><td>alpha_rad_outer_mean</td>
 <td>(float [W/(m2K)]) Area-weighted radiative coefficient of all surfaces facing the ambient (OuterWalls, Windows, ...).</td>
 </tr>
-<tr class="row-odd"><td>heat_load</td>
+<tr class="row-even"><td>heat_load</td>
 <td>([W]) Static heat load of the thermal zone.</td>
 </tr>
-<tr class="row-even"><td>facade_areas</td>
+<tr class="row-odd"><td>facade_areas</td>
 <td>(list of floats [m2]) List containing the area of each facade (with same tilt and orientation) this includes also roofs and ground floors and windows.</td>
 </tr>
-<tr class="row-odd"><td>n_outer</td>
+<tr class="row-even"><td>n_outer</td>
 <td>(int) Number of total facades with different combination of tilt and orientation, windows and outer walls rooftops</td>
 </tr>
-<tr class="row-even"><td>tilt_facade</td>
+<tr class="row-odd"><td>tilt_facade</td>
 <td>(list of floats [degree]) Tilt of facades against the horizontal.</td>
 </tr>
-<tr class="row-odd"><td>orientation_facade</td>
+<tr class="row-even"><td>orientation_facade</td>
 <td>(list of floats [degree]) Orientation of facades (Azimuth). 0 - North 90 - East 180 - South 270 - West</td>
 </tr>
 </tbody>
@@ -1581,73 +1590,76 @@ supported for Annex60)</p>
 <tr class="row-even"><td>ua_value_win</td>
 <td>(float [W/K]) U-Value times outer wall area.</td>
 </tr>
-<tr class="row-odd"><td>r_conv_inner_win</td>
+<tr class="row-odd"><td>u_value_win</td>
+<td>(float [W/(m2K)]) Area weighted U-Value of windows.</td>
+</tr>
+<tr class="row-even"><td>r_conv_inner_win</td>
 <td>(float [K/W]) Sum of convective resistances for all windows facing the inside of this thermal zone.</td>
 </tr>
-<tr class="row-even"><td>r_rad_inner_win</td>
+<tr class="row-odd"><td>r_rad_inner_win</td>
 <td>(float [K/W]) Sum of radiative resistances for all windows facing the inside of this thermal zone.</td>
 </tr>
-<tr class="row-odd"><td>r_comb_inner_win</td>
+<tr class="row-even"><td>r_comb_inner_win</td>
 <td>(float [K/W]) Sum of combined resistances for all windows facing the inside of this thermal zone.</td>
 </tr>
-<tr class="row-even"><td>r_conv_outer_win</td>
+<tr class="row-odd"><td>r_conv_outer_win</td>
 <td>(float [K/W]) Sum of convective resistances for all windows facing the ambient.</td>
 </tr>
-<tr class="row-odd"><td>r_rad_outer_win</td>
+<tr class="row-even"><td>r_rad_outer_win</td>
 <td>(float [K/W]) Sum of radiative resistances for all windows facing the ambient.</td>
 </tr>
-<tr class="row-even"><td>r_comb_outer_win</td>
+<tr class="row-odd"><td>r_comb_outer_win</td>
 <td>(float [K/W]) Sum of combined resistances for all windows facing the ambient.</td>
 </tr>
-<tr class="row-odd"><td>r1_win</td>
+<tr class="row-even"><td>r1_win</td>
 <td>(float [K/W]) Lumped resistance of windows, no heat transfer coefficients for convection and radiation are accounted in this resistance.</td>
 </tr>
-<tr class="row-even"><td>weightfactor_win</td>
+<tr class="row-odd"><td>weightfactor_win</td>
 <td>(list of floats) Weightfactors of windows (UA-Value of windows with same orientation and tilt divided by ua_value_win or ua_value_win+ua_value_ow, depending if windows is lumped/merged into the walls or not)</td>
 </tr>
-<tr class="row-odd"><td>window_areas</td>
+<tr class="row-even"><td>window_areas</td>
 <td>(list of floats [m2]) Area of all windows in one list, if the windows are merged into the outer wall this list will be full of zeros</td>
 </tr>
-<tr class="row-even"><td>transparent_areas</td>
+<tr class="row-odd"><td>transparent_areas</td>
 <td>(list of floats [m2]) Area of all transparent elements (most likely windows) in one list, this list will be always filled with the areas, independent if windows are merged into walls or not.</td>
 </tr>
-<tr class="row-odd"><td>solar_absorp_win</td>
+<tr class="row-even"><td>solar_absorp_win</td>
 <td>(float) Area-weighted solar absorption for windows. (typically 0.0)</td>
 </tr>
-<tr class="row-even"><td>ir_emissivity_win</td>
+<tr class="row-odd"><td>ir_emissivity_win</td>
 <td>(float) Area-weighted ir_emissivity for windows. Can be used for windows facing the thermal zone and the ambient.</td>
 </tr>
-<tr class="row-odd"><td>weighted_g_value</td>
+<tr class="row-even"><td>weighted_g_value</td>
 <td>(float) Area-weighted g-Value of all windows.</td>
 </tr>
-<tr class="row-even"><td>g_sunblind</td>
+<tr class="row-odd"><td>g_sunblind</td>
 <td>(list of floats) G-Value of all sunblinds of each window in a list</td>
 </tr>
-<tr class="row-odd"><td>Misc values:</td>
+<tr class="row-even"><td>Misc values:</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>alpha_rad_inner_mean</td>
+<tr class="row-odd"><td>alpha_rad_inner_mean</td>
 <td>(float [W/(m2K)]) Area-weighted radiative coefficient of all surfaces facing the inside of this thermal zone (OuterWalls, Windows, InnerWalls, ...).</td>
 </tr>
-<tr class="row-odd"><td>alpha_rad_outer_mean</td>
+<tr class="row-even"><td>alpha_rad_outer_mean</td>
 <td>(float [W/(m2K)]) Area-weighted radiative coefficient of all surfaces facing the ambient (OuterWalls, Windows, ...).</td>
 </tr>
-<tr class="row-even"><td>heat_load</td>
+<tr class="row-odd"><td>heat_load</td>
 <td>([W]) Static heat load of the thermal zone.</td>
 </tr>
-<tr class="row-odd"><td>facade_areas</td>
+<tr class="row-even"><td>facade_areas</td>
 <td>(list of floats [m2]) List containing the area of each facade (with same tilt and orientation) this includes also roofs and ground floors and windows.</td>
 </tr>
-<tr class="row-even"><td>n_outer</td>
+<tr class="row-odd"><td>n_outer</td>
 <td>(int) Number of total facades with different combination of tilt and orientation, windows and outer walls</td>
 </tr>
-<tr class="row-odd"><td>n_rt</td>
+<tr class="row-even"><td>n_rt</td>
 <td>(int) Number of total facades with different combination of tilt and orientation, Rooftops</td>
 </tr>
-<tr class="row-even"><td>tilt_facade</td>
+<tr class="row-odd"><td>tilt_facade</td>
 <td>(list of floats [degree]) Tilt of facades against the horizontal.</td>
 </tr>
-<tr class="row-odd"><td>orientation_facade</td>
+<tr class="row-even"><td>orientation_facade</td>
 <td>(list of floats [degree]) Orientation of facades (Azimuth). 0 - North 90 - East 180 - South 270 - West</td>
 </tr>
 </tbody>
