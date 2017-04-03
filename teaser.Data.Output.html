@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>output &mdash; TEASER 0.5.0 documentation</title>
+    <title>output &mdash; TEASER 0.5.1 documentation</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0',
+        VERSION:     '0.5.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="TEASER 0.5.0 documentation" href="index.html" />
+    <link rel="top" title="TEASER 0.5.1 documentation" href="index.html" />
     <link rel="up" title="data" href="teaser.Data.html" />
     <link rel="next" title="logic" href="teaser.Logic.html" />
     <link rel="prev" title="input" href="teaser.Data.Input.html" /> 
@@ -48,7 +48,7 @@
         <li class="right" >
           <a href="teaser.Data.Input.html" title="input"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.1 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="teaser.html" >TEASER modules</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="teaser.Data.html" accesskey="U">data</a> &raquo;</li> 
       </ul>
@@ -59,7 +59,7 @@
   <ul>
 <li><a class="reference internal" href="#">output</a><ul>
 <li><a class="reference internal" href="#module-teaser.data.output.aixlib_output">Export AixLib models</a></li>
-<li><a class="reference internal" href="#export-annex60-models">Export Annex60 models</a></li>
+<li><a class="reference internal" href="#module-teaser.data.output.ibpsa_output">Export IBPSA models</a></li>
 <li><a class="reference internal" href="#saving-teaserxml">Saving *.teaserXML</a></li>
 <li><a class="reference internal" href="#module-teaser.data.output.citygml_output">Saving CityGML .*gml</a></li>
 <li><a class="reference internal" href="#module-teaser.data.output.text_output">Saving text output</a></li>
@@ -122,7 +122,7 @@ model. Depending on chosen calculation method the parameter set to 1,2,
 glazing (corG) and decoupled heat conduction through windows (
 merge_windows=False). In contrast to versions &lt; 0.5 TEASER now does not
 support any other model options, as we observed no need, since single
-ThermalZones are identical with Annex60 models. If you miss one of the
+ThermalZones are identical with IBPSA models. If you miss one of the
 old options please contact us.</p>
 <p>This function uses Mako Templates specified in
 data.output.modelicatemplates.AixLib</p>
@@ -180,22 +180,22 @@ an alternative path can be specified as a full path</p>
 </dd></dl>
 
 </div>
-<div class="section" id="export-annex60-models">
-<h2>Export Annex60 models<a class="headerlink" href="#export-annex60-models" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-teaser.data.output.annex60_output"></span><p>annex60_output</p>
-<p>This module contains function to call Templates for Annex60 model generation</p>
+<div class="section" id="module-teaser.data.output.ibpsa_output">
+<span id="export-ibpsa-models"></span><h2>Export IBPSA models<a class="headerlink" href="#module-teaser.data.output.ibpsa_output" title="Permalink to this headline">¶</a></h2>
+<p>ibpsa_output</p>
+<p>This module contains function to call Templates for IBPSA model generation</p>
 <dl class="function">
-<dt id="teaser.data.output.annex60_output.export_annex60">
-<code class="descclassname">teaser.data.output.annex60_output.</code><code class="descname">export_annex60</code><span class="sig-paren">(</span><em>buildings</em>, <em>prj</em>, <em>path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.data.output.annex60_output.export_annex60" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exports models for Annex60 library</p>
+<dt id="teaser.data.output.ibpsa_output.export_ibpsa">
+<code class="descclassname">teaser.data.output.ibpsa_output.</code><code class="descname">export_ibpsa</code><span class="sig-paren">(</span><em>buildings</em>, <em>prj</em>, <em>path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.data.output.ibpsa_output.export_ibpsa" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports models for IBPSA library</p>
 <p>Export a building to several models for
-Annex60.ThermalZones.ReducedOrder. Depending on the chosen calculation
+IBPSA.ThermalZones.ReducedOrder. Depending on the chosen calculation
 method models for 1, 2, 3, or 4 element model are exported. In addition
 you can specify if windows should be lumped into the walls, like it is
 done in VDI 6007 (merge_windows=True) or not. For each zone, one model is
 exported, if you want to combine all thermal zones into one model, consider
 using AixLib. The export includes internal gains from use conditions (
-calculated in teaser.logic.calculation.annex60) but does not include any
+calculated in teaser.logic.calculation.ibpsa) but does not include any
 heating or cooling equipment.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -538,7 +538,7 @@ but the user can individually change that.</p>
         <li class="right" >
           <a href="teaser.Data.Input.html" title="input"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.1 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="teaser.html" >TEASER modules</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="teaser.Data.html" >data</a> &raquo;</li> 
       </ul>

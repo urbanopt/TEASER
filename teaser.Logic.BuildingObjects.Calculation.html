@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Calculation &mdash; TEASER 0.5.0 documentation</title>
+    <title>Calculation &mdash; TEASER 0.5.1 documentation</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0',
+        VERSION:     '0.5.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="TEASER 0.5.0 documentation" href="index.html" />
+    <link rel="top" title="TEASER 0.5.1 documentation" href="index.html" />
     <link rel="up" title="buildingobjects" href="teaser.Logic.BuildingObjects.html" />
     <link rel="next" title="archetypebuildings" href="teaser.Logic.ArchetypeBuildings.html" />
     <link rel="prev" title="buildingsystems" href="teaser.Logic.BuildingObjects.BuildingSystems.html" /> 
@@ -48,7 +48,7 @@
         <li class="right" >
           <a href="teaser.Logic.BuildingObjects.BuildingSystems.html" title="buildingsystems"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.1 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="teaser.html" >TEASER modules</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="teaser.Logic.html" >logic</a> &raquo;</li>
           <li class="nav-item nav-item-3"><a href="teaser.Logic.BuildingObjects.html" accesskey="U">buildingobjects</a> &raquo;</li> 
@@ -60,7 +60,7 @@
   <ul>
 <li><a class="reference internal" href="#">Calculation</a><ul>
 <li><a class="reference internal" href="#module-teaser.logic.buildingobjects.calculation.aixlib">AixLib specific building class</a></li>
-<li><a class="reference internal" href="#module-teaser.logic.buildingobjects.calculation.annex60">Annex specific building class</a></li>
+<li><a class="reference internal" href="#module-teaser.logic.buildingobjects.calculation.ibpsa">IBPSA specific building class</a></li>
 <li><a class="reference internal" href="#module-teaser.logic.buildingobjects.calculation.one_element">One element model calculation</a></li>
 <li><a class="reference internal" href="#module-teaser.logic.buildingobjects.calculation.two_element">Two element model calculation</a></li>
 <li><a class="reference internal" href="#three-element-model-calculation">Three element model calculation</a></li>
@@ -309,16 +309,16 @@ zone, that are all saved into one matrix.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-teaser.logic.buildingobjects.calculation.annex60">
-<span id="annex-specific-building-class"></span><h2>Annex specific building class<a class="headerlink" href="#module-teaser.logic.buildingobjects.calculation.annex60" title="Permalink to this headline">¶</a></h2>
-<p>This module includes Annex60 calcuation class</p>
+<div class="section" id="module-teaser.logic.buildingobjects.calculation.ibpsa">
+<span id="ibpsa-specific-building-class"></span><h2>IBPSA specific building class<a class="headerlink" href="#module-teaser.logic.buildingobjects.calculation.ibpsa" title="Permalink to this headline">¶</a></h2>
+<p>This module includes IBPSA calcuation class</p>
 <dl class="class">
-<dt id="teaser.logic.buildingobjects.calculation.annex60.Annex60">
-<em class="property">class </em><code class="descclassname">teaser.logic.buildingobjects.calculation.annex60.</code><code class="descname">Annex60</code><span class="sig-paren">(</span><em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.logic.buildingobjects.calculation.annex60.Annex60" title="Permalink to this definition">¶</a></dt>
+<dt id="teaser.logic.buildingobjects.calculation.ibpsa.IBPSA">
+<em class="property">class </em><code class="descclassname">teaser.logic.buildingobjects.calculation.ibpsa.</code><code class="descname">IBPSA</code><span class="sig-paren">(</span><em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.logic.buildingobjects.calculation.ibpsa.IBPSA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>Annex60 Class</p>
+<p>IBPSA Class</p>
 <p>This class holds functions to sort and partly rewrite zone and building
-attributes specific for Annex60 simulation. This includes the export of
+attributes specific for IBPSA simulation. This includes the export of
 boundary coniditons.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -340,8 +340,8 @@ zones in the building</p>
 </table>
 <p class="rubric">Methods</p>
 <dl class="staticmethod">
-<dt id="teaser.logic.buildingobjects.calculation.annex60.Annex60.create_profile">
-<em class="property">static </em><code class="descname">create_profile</code><span class="sig-paren">(</span><em>duration_profile=86400</em>, <em>time_step=3600</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.logic.buildingobjects.calculation.annex60.Annex60.create_profile" title="Permalink to this definition">¶</a></dt>
+<dt id="teaser.logic.buildingobjects.calculation.ibpsa.IBPSA.create_profile">
+<em class="property">static </em><code class="descname">create_profile</code><span class="sig-paren">(</span><em>duration_profile=86400</em>, <em>time_step=3600</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.logic.buildingobjects.calculation.ibpsa.IBPSA.create_profile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a profile for building boundary conditions</p>
 <p>This function creates a list with an equidistant profile given the
 duration of the profile in seconds (default one day, 86400 s) and the
@@ -373,8 +373,8 @@ conditions</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="teaser.logic.buildingobjects.calculation.annex60.Annex60.modelica_gains_boundary">
-<code class="descname">modelica_gains_boundary</code><span class="sig-paren">(</span><em>zone</em>, <em>time_line=None</em>, <em>path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.logic.buildingobjects.calculation.annex60.Annex60.modelica_gains_boundary" title="Permalink to this definition">¶</a></dt>
+<dt id="teaser.logic.buildingobjects.calculation.ibpsa.IBPSA.modelica_gains_boundary">
+<code class="descname">modelica_gains_boundary</code><span class="sig-paren">(</span><em>zone</em>, <em>time_line=None</em>, <em>path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.logic.buildingobjects.calculation.ibpsa.IBPSA.modelica_gains_boundary" title="Permalink to this definition">¶</a></dt>
 <dd><p>creates .mat file for internal gains boundary conditions</p>
 <p>This function creates a matfile (-v4) for building internal gains
 boundary conditions. It collects internal gain profiles of a specific
@@ -393,7 +393,7 @@ used in the simple Annex 60 exmaples.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>zone</strong> : ThermalZone()</p>
 <blockquote>
-<div><p>TEASER instance of ThermalZone. As Annex60 computes single models
+<div><p>TEASER instance of ThermalZone. As IBPSA computes single models
 for single zones, we need to generate individual files for zones
 and internal gains</p>
 </div></blockquote>
@@ -442,7 +442,7 @@ windows or merge all windows into the RC-Combination for outer walls.</p>
 <blockquote>
 <div><p>True for merging the windows into the outer wall&#8217;s RC-combination,
 False for separate resistance for window, default is False. (Only
-supported for Annex60)</p>
+supported for IBPSA)</p>
 </div></blockquote>
 <p><strong>t_bt</strong> : float [d]</p>
 <blockquote class="last">
@@ -688,7 +688,7 @@ windows or merge all windows into the RC-Combination for outer walls.</p>
 <blockquote>
 <div><p>True for merging the windows into the outer wall&#8217;s RC-combination,
 False for separate resistance for window, default is False. (Only
-supported for Annex60)</p>
+supported for IBPSA)</p>
 </div></blockquote>
 <p><strong>t_bt</strong> : float [d]</p>
 <blockquote class="last">
@@ -978,7 +978,7 @@ windows or merge all windows into the RC-Combination for outer walls.</p>
 <blockquote>
 <div><p>True for merging windows into the outer wall&#8217;s RC-combination,
 False for separate resistance for window, default is False. (Only
-supported for Annex60)</p>
+supported for IBPSA)</p>
 </div></blockquote>
 <p><strong>t_bt</strong> : float [d]</p>
 <blockquote class="last">
@@ -1303,7 +1303,7 @@ windows or merge all windows into the RC-Combination for outer walls.</p>
 <blockquote>
 <div><p>True for merging windows into the outer wall&#8217;s RC-combination,
 False for separate resistance for window, default is False. (Only
-supported for Annex60)</p>
+supported for IBPSA)</p>
 </div></blockquote>
 <p><strong>t_bt</strong> : float [d]</p>
 <blockquote class="last">
@@ -1703,7 +1703,7 @@ supported for Annex60)</p>
         <li class="right" >
           <a href="teaser.Logic.BuildingObjects.BuildingSystems.html" title="buildingsystems"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.1 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="teaser.html" >TEASER modules</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="teaser.Logic.html" >logic</a> &raquo;</li>
           <li class="nav-item nav-item-3"><a href="teaser.Logic.BuildingObjects.html" >buildingobjects</a> &raquo;</li> 

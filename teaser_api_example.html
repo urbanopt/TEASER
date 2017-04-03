@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>API examples &mdash; TEASER 0.5.0 documentation</title>
+    <title>API examples &mdash; TEASER 0.5.1 documentation</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0',
+        VERSION:     '0.5.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="TEASER 0.5.0 documentation" href="index.html" />
+    <link rel="top" title="TEASER 0.5.1 documentation" href="index.html" />
     <link rel="up" title="Examples" href="teaser.Examples.html" />
     <link rel="next" title="Advanced examples" href="teaser_advanced_example.html" />
     <link rel="prev" title="Examples" href="teaser.Examples.html" /> 
@@ -48,7 +48,7 @@
         <li class="right" >
           <a href="teaser.Examples.html" title="Examples"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.1 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="teaser.Examples.html" accesskey="U">Examples</a> &raquo;</li> 
       </ul>
     </div>
@@ -204,7 +204,6 @@
 <span class="kn">import</span> <span class="nn">os</span>
 
 
-
 <span class="k">def</span> <span class="nf">example_export_aixlib</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;&quot;This function demonstrates the export to Modelica library AixLib using</span>
 <span class="sd">    the API function of TEASER&quot;&quot;&quot;</span>
@@ -267,7 +266,7 @@
 <span class="c1"># TEASER Development Team</span>
 
 <span class="sd">&quot;&quot;&quot;This module contains an example how to export buildings from a TEASER</span>
-<span class="sd">project to ready-to-run simulation models for Modelica library Annex60. These</span>
+<span class="sd">project to ready-to-run simulation models for Modelica library IBPSA. These</span>
 <span class="sd">models simulate in Dymola, OpenModelica and JModelica.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
@@ -276,9 +275,8 @@
 <span class="kn">import</span> <span class="nn">os</span>
 
 
-
 <span class="k">def</span> <span class="nf">example_export_annex</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;&quot;This function demonstrates the export to Modelica library Annex60 using</span>
+    <span class="sd">&quot;&quot;&quot;&quot;This function demonstrates the export to Modelica library IBPSA using</span>
 <span class="sd">    the API function of TEASER&quot;&quot;&quot;</span>
 
     <span class="c1"># In e1_generate_archetype we created a Project with three archetype</span>
@@ -298,7 +296,7 @@
     <span class="c1"># file by setting Project().weather_file_path. However we will use default</span>
     <span class="c1"># weather file.</span>
 
-    <span class="n">prj</span><span class="o">.</span><span class="n">used_library_calc</span> <span class="o">=</span> <span class="s1">&#39;Annex60&#39;</span>
+    <span class="n">prj</span><span class="o">.</span><span class="n">used_library_calc</span> <span class="o">=</span> <span class="s1">&#39;IBPSA&#39;</span>
     <span class="n">prj</span><span class="o">.</span><span class="n">number_of_elements_calc</span> <span class="o">=</span> <span class="mi">4</span>
     <span class="n">prj</span><span class="o">.</span><span class="n">merge_windows_calc</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">prj</span><span class="o">.</span><span class="n">weather_file_path</span> <span class="o">=</span> <span class="n">utilities</span><span class="o">.</span><span class="n">get_full_path</span><span class="p">(</span>
@@ -322,7 +320,7 @@
     <span class="c1"># exported. In this case we want to export all buildings to our home</span>
     <span class="c1"># directory, thus we are passing over None for both parameters.</span>
 
-    <span class="n">prj</span><span class="o">.</span><span class="n">export_annex</span><span class="p">(</span>
+    <span class="n">prj</span><span class="o">.</span><span class="n">export_ibpsa</span><span class="p">(</span>
         <span class="n">internal_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
         <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 
@@ -410,18 +408,24 @@
     <span class="c1"># To load data from *.teaserXML we can use a simple API function. So</span>
     <span class="c1"># first we need to instantiate our API (similar to example</span>
     <span class="c1"># e1_generate_archetype). The XML file is called</span>
-    <span class="c1"># `ArchetypeExample.teaserXML` and saved in the default path.</span>
+    <span class="c1"># `ArchetypeExample.teaserXML` and saved in the default path. You need to</span>
+    <span class="c1">#  run e4 first before you can load this example file.</span>
 
     <span class="kn">from</span> <span class="nn">teaser.project</span> <span class="kn">import</span> <span class="n">Project</span>
 
     <span class="n">prj</span> <span class="o">=</span> <span class="n">Project</span><span class="p">()</span>
 
-    <span class="n">load_xml</span> <span class="o">=</span> <span class="n">pickle_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">load_xml</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
         <span class="n">utilities</span><span class="o">.</span><span class="n">get_default_path</span><span class="p">(),</span>
         <span class="s1">&#39;ArchetypeExample.teaserXML&#39;</span><span class="p">)</span>
 
     <span class="n">prj</span><span class="o">.</span><span class="n">load_project</span><span class="p">(</span>
         <span class="n">path</span><span class="o">=</span><span class="n">load_xml</span><span class="p">)</span>
+    <span class="n">prj</span> <span class="o">=</span> <span class="n">Project</span><span class="p">()</span>
+    <span class="n">prj</span><span class="o">.</span><span class="n">load_project</span><span class="p">(</span><span class="n">utilities</span><span class="o">.</span><span class="n">get_full_path</span><span class="p">(</span>
+        <span class="s2">&quot;examples/examplefiles/new.teaserXML&quot;</span><span class="p">))</span>
+    <span class="n">prj</span><span class="o">.</span><span class="n">save_project</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="s2">&quot;new&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+
 
     <span class="c1"># To reload data from a pickle file, we do not need to instantiate an</span>
     <span class="c1"># API, as pickle will automatically instantiate all classes as they have</span>
@@ -429,11 +433,28 @@
 
     <span class="kn">import</span> <span class="nn">pickle</span>
 
-    <span class="n">load_pickle</span> <span class="o">=</span> <span class="n">pickle_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">load_pickle</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
         <span class="n">utilities</span><span class="o">.</span><span class="n">get_default_path</span><span class="p">(),</span>
         <span class="s1">&#39;teaser_pickle.p&#39;</span><span class="p">)</span>
 
     <span class="n">pickle_prj</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">load_pickle</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">))</span>
+
+    <span class="c1"># The last option to import data into TEASER is using a CityGML file. The</span>
+    <span class="c1"># import of CityGML underlies some limitations e.g. concerning data</span>
+    <span class="c1"># given in the file and the way the buildings are modeled.</span>
+
+    <span class="n">prj_gml</span> <span class="o">=</span> <span class="n">Project</span><span class="p">()</span>
+
+    <span class="n">load_gml</span> <span class="o">=</span> <span class="n">utilities</span><span class="o">.</span><span class="n">get_full_path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="s1">&#39;examples&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;examplefiles&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;CityGMLSample.gml&#39;</span><span class="p">))</span>
+
+    <span class="n">prj_gml</span><span class="o">.</span><span class="n">load_citygml</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">load_gml</span><span class="p">)</span>
+
+    <span class="c1"># After you imported your teaser project one or another way into you</span>
+    <span class="c1"># python environment you can access variables and functions.</span>
+
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">example_save</span><span class="p">()</span>
@@ -508,7 +529,7 @@
         <li class="right" >
           <a href="teaser.Examples.html" title="Examples"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.1 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="teaser.Examples.html" >Examples</a> &raquo;</li> 
       </ul>
     </div>
