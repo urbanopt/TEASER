@@ -13,7 +13,7 @@ Example 2: Export Modelica models for AixLib library using TEASER API
 
 .. literalinclude:: ../teaser/examples/e2_export_aixlib_models.py
 
-Example 3: Export Modelica models for AixLib library using TEASER API
+Example 3: Export Modelica models for IBPSA library using TEASER API
 ---------------------------------------------------------------------
 
 .. literalinclude:: ../teaser/examples/e3_export_ibpsa_models.py
