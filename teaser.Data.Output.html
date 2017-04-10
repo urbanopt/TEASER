@@ -108,7 +108,7 @@
 <h1>output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module-teaser.data.output.aixlib_output">
 <span id="export-aixlib-models"></span><h2>Export AixLib models<a class="headerlink" href="#module-teaser.data.output.aixlib_output" title="Permalink to this headline">¶</a></h2>
-<p>aixlib_output</p>
+<p>ibpsa_output</p>
 <p>This module contains function to call Templates for AixLib model generation</p>
 <dl class="function">
 <dt id="teaser.data.output.aixlib_output.export_multizone">
@@ -186,7 +186,7 @@ an alternative path can be specified as a full path</p>
 <p>This module contains function to call Templates for IBPSA model generation</p>
 <dl class="function">
 <dt id="teaser.data.output.ibpsa_output.export_ibpsa">
-<code class="descclassname">teaser.data.output.ibpsa_output.</code><code class="descname">export_ibpsa</code><span class="sig-paren">(</span><em>buildings</em>, <em>prj</em>, <em>path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.data.output.ibpsa_output.export_ibpsa" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">teaser.data.output.ibpsa_output.</code><code class="descname">export_ibpsa</code><span class="sig-paren">(</span><em>buildings</em>, <em>prj</em>, <em>path=None</em>, <em>library='AixLib'</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.data.output.ibpsa_output.export_ibpsa" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports models for IBPSA library</p>
 <p>Export a building to several models for
 IBPSA.ThermalZones.ReducedOrder. Depending on the chosen calculation
@@ -213,9 +213,17 @@ only that building.</p>
 information, e.g. name or version of used libraries</p>
 </div></blockquote>
 <p><strong>path</strong> : string</p>
-<blockquote class="last">
+<blockquote>
 <div><p>if the Files should not be stored in default output path of TEASER,
 an alternative path can be specified as a full path</p>
+</div></blockquote>
+<p><strong>library</strong> : str</p>
+<blockquote class="last">
+<div><p>Used library within the framework of IBPSA library. The
+models are identical in each library, but IBPSA Modelica library is
+just a core set of models and should not be used standalone.
+Valid values are &#8216;AixLib&#8217; (default), &#8216;Buildings&#8217;,
+&#8216;BuildingSystems&#8217; and &#8216;IDEAS&#8217;.</p>
 </div></blockquote>
 </td>
 </tr>

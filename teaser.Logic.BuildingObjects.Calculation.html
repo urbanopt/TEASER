@@ -143,8 +143,8 @@ calculated for. (default: None)</p>
 <tr class="row-even"><td>file_ahu</td>
 <td>(str) Filename for AHU boundary conditions file</td>
 </tr>
-<tr class="row-odd"><td>file_intern_gains:</td>
-<td>Filename for internal gains file</td>
+<tr class="row-odd"><td>file_internal_gains</td>
+<td>(str) Filename for internal gains file</td>
 </tr>
 <tr class="row-even"><td>version</td>
 <td>(str) Used AixLib version, default should always be current master version of GitHub</td>
@@ -325,16 +325,29 @@ boundary coniditons.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent: Building()</strong></p>
-<blockquote>
+<blockquote class="last">
 <div><p>The parent class of this object, the Building the attributes are
 calculated for. (default: None)</p>
 </div></blockquote>
-<p><strong>consider_heat_capacity</strong> : bool</p>
-<blockquote class="last">
-<div><p>decides whether air capacity is considered or not for all thermal
-zones in the building</p>
-</div></blockquote>
 </td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>file_internal_gains</td>
+<td>(str) Filename for internal gains file</td>
+</tr>
+<tr class="row-even"><td>version</td>
+<td>(dict) Dictionary with supportes library and their version number</td>
+</tr>
+<tr class="row-odd"><td>consider_heat_capacity</td>
+<td>(bool) decides whether air capacity is considered or not for all thermal zones in the building</td>
 </tr>
 </tbody>
 </table>

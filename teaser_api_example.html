@@ -59,7 +59,7 @@
 <li><a class="reference internal" href="#">API examples</a><ul>
 <li><a class="reference internal" href="#example-1-generate-archetype-buildings-using-teaser-api">Example 1: Generate archetype buildings using TEASER API</a></li>
 <li><a class="reference internal" href="#example-2-export-modelica-models-for-aixlib-library-using-teaser-api">Example 2: Export Modelica models for AixLib library using TEASER API</a></li>
-<li><a class="reference internal" href="#example-3-export-modelica-models-for-ibpsa-library-using-teaser-api">Example 3: Export Modelica models for IBPSA library using TEASER API</a></li>
+<li><a class="reference internal" href="#example-3-export-modelica-models-for-aixlib-library-using-teaser-api">Example 3: Export Modelica models for AixLib library using TEASER API</a></li>
 <li><a class="reference internal" href="#example-4-save-information">Example 4: Save information</a></li>
 <li><a class="reference internal" href="#example-5-load-information">Example 5: Load information</a></li>
 <li><a class="reference internal" href="#example-6-retrofit-buildings">Example 6: Retrofit buildings</a></li>
@@ -260,8 +260,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="example-3-export-modelica-models-for-ibpsa-library-using-teaser-api">
-<h2>Example 3: Export Modelica models for IBPSA library using TEASER API<a class="headerlink" href="#example-3-export-modelica-models-for-ibpsa-library-using-teaser-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-3-export-modelica-models-for-aixlib-library-using-teaser-api">
+<h2>Example 3: Export Modelica models for AixLib library using TEASER API<a class="headerlink" href="#example-3-export-modelica-models-for-aixlib-library-using-teaser-api" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Created January 2017</span>
 <span class="c1"># TEASER Development Team</span>
 
@@ -275,7 +275,7 @@
 <span class="kn">import</span> <span class="nn">os</span>
 
 
-<span class="k">def</span> <span class="nf">example_export_annex</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">example_export_ibpsa</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;&quot;This function demonstrates the export to Modelica library IBPSA using</span>
 <span class="sd">    the API function of TEASER&quot;&quot;&quot;</span>
 
@@ -312,7 +312,12 @@
 
     <span class="n">prj</span><span class="o">.</span><span class="n">calc_all_buildings</span><span class="p">()</span>
 
-    <span class="c1"># To export the ready-to-run models simply call Project.export_annex().</span>
+    <span class="c1"># To export the ready-to-run models simply call Project.export_ibpsa().</span>
+    <span class="c1"># First specify the IBPSA related library you want to export the models</span>
+    <span class="c1"># for. The models are identical in each library, but IBPSA Modelica</span>
+    <span class="c1"># library is  just a core set of models and should not be used</span>
+    <span class="c1"># standalone. Valid values are &#39;AixLib&#39; (default), &#39;Buildings&#39;,</span>
+    <span class="c1"># &#39;BuildingSystems&#39; and &#39;IDEAS&#39;. We chose AixLib</span>
     <span class="c1"># You can specify the path, where the model files should be saved.</span>
     <span class="c1"># None means, that the default path in your home directory</span>
     <span class="c1"># will be used. If you only want to export one specific building, you can</span>
@@ -321,12 +326,13 @@
     <span class="c1"># directory, thus we are passing over None for both parameters.</span>
 
     <span class="n">prj</span><span class="o">.</span><span class="n">export_ibpsa</span><span class="p">(</span>
+        <span class="n">library</span><span class="o">=</span><span class="s1">&#39;AixLib&#39;</span><span class="p">,</span>
         <span class="n">internal_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
         <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
 
-    <span class="n">example_export_annex</span><span class="p">()</span>
+    <span class="n">example_export_ibpsa</span><span class="p">()</span>
 
     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Example 3: That&#39;s it! :)&quot;</span><span class="p">)</span>
 </pre></div>
