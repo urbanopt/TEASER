@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Issues solved in development &mdash; TEASER 0.5.1 documentation</title>
+    <title>Frequently Asked Questions &mdash; TEASER 0.5.1 documentation</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,7 +24,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="TEASER 0.5.1 documentation" href="index.html" />
-    <link rel="prev" title="Frequently Asked Questions" href="faq.html" /> 
+    <link rel="next" title="Issues solved in development" href="development.html" />
+    <link rel="prev" title="License" href="license.html" /> 
   </head>
   <body role="document">
 <div class="headerStyle">
@@ -41,20 +42,34 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="faq.html" title="Frequently Asked Questions"
+          <a href="development.html" title="Issues solved in development"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="license.html" title="License"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Frequently Asked Questions</a><ul>
+<li><a class="reference internal" href="#after-installing-teaser-with-pip-i-get-error-messages-from-python-packages-numpy-or-scipy">After installing TEASER with pip I get error messages from python packages NumPy or SciPy</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="faq.html"
-                        title="previous chapter">Frequently Asked Questions</a></p>
+  <p class="topless"><a href="license.html"
+                        title="previous chapter">License</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="development.html"
+                        title="next chapter">Issues solved in development</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/development.txt"
+      <li><a href="_sources/faq.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -79,15 +94,26 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="issues-solved-in-development">
-<h1>Issues solved in development<a class="headerlink" href="#issues-solved-in-development" title="Permalink to this headline">¶</a></h1>
-<p>Issues that are solved and implemented in development, but not available in
-master branch:</p>
-<blockquote>
-<div><ul class="simple">
-<li>Export for individual libraries instead of IBPSA library <a class="reference external" href="https://github.com/RWTH-EBC/TEASER/issues/440">https://github.com/RWTH-EBC/TEASER/issues/440</a></li>
-</ul>
-</div></blockquote>
+  <div class="section" id="frequently-asked-questions">
+<h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="after-installing-teaser-with-pip-i-get-error-messages-from-python-packages-numpy-or-scipy">
+<h2>After installing TEASER with pip I get error messages from python packages NumPy or SciPy<a class="headerlink" href="#after-installing-teaser-with-pip-i-get-error-messages-from-python-packages-numpy-or-scipy" title="Permalink to this headline">¶</a></h2>
+<p>If you have installed TEASER using pip, it also tries to update all required
+packages. This update often fails for NumPy and SciPy. NumPy and SciPy packages
+come with some pre-compiled binaries, the installation with pip under windows
+does often not work with these binaries (espacially using a 64bit system). You
+need to update NumPy and SciPy manually. To do this please select the correct
+file from <a class="reference external" href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy">http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy</a> and
+<a class="reference external" href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy">http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy</a> regarding your system
+architecure (32bit or 64bit) and your Python version (e.g. 3.5 or 3.6). Download
+the corresponding file, navigate with your Python enabled command line to the
+download folder and install the wheel files, in this example we are using python
+3.5 and a 64bit architecture:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>pip install numpy-1.12.1+mkl-cp35-cp35m-win_amd64.whl
+pip install scipy-0.19.0-cp35-cp35m-win_amd64.whl
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -106,7 +132,10 @@ master branch:</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="faq.html" title="Frequently Asked Questions"
+          <a href="development.html" title="Issues solved in development"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="license.html" title="License"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.1 documentation</a> &raquo;</li> 
       </ul>
