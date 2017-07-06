@@ -1818,7 +1818,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.58 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.70 - 0.17)), 1)
@@ -1860,7 +1860,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.41 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.70 - 0.17)), 1)
@@ -1902,7 +1902,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.33 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.70 - 0.17)), 1)
@@ -1944,7 +1944,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.22 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.70 - 0.17)), 1)
@@ -1986,7 +1986,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.20 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.70 - 0.17)), 1)
@@ -2028,7 +2028,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.29 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.70 - 0.17)), 1)
@@ -2070,7 +2070,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.24 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.70 - 0.17)), 1)
@@ -2112,7 +2112,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.21 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.70 - 0.17)), 1)
@@ -2154,7 +2154,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.16 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.70 - 0.17)), 1)
@@ -2196,7 +2196,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.15 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.70 - 0.17)), 1)
@@ -2242,7 +2242,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.09 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.39 - 0.17)), 1)
@@ -2284,7 +2284,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.09 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.39 - 0.17)), 1)
@@ -2326,7 +2326,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.08 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.39 - 0.17)), 1)
@@ -2368,7 +2368,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.07 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.39 - 0.17)), 1)
@@ -2410,7 +2410,7 @@ class Test_tabula_mfh(object):
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.07 - 0.17)), 1)
 
-        elif "_2_" in outer_walls.construction_type:
+            elif "_2_" in outer_walls.construction_type:
 
                 assert round(1 / (outer_walls.r_conduc * outer_walls.area),
                              1) == round((1 / (1 / 0.39 - 0.17)), 1)
