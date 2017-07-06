@@ -166,7 +166,7 @@ class MultiFamilyHouse(SingleFamilyHouse):
                 'win1': 0.1491,
                 'win2': 0.0,
                 'door': 0.00829},
-			(1986, 1995): {
+            (1986, 1995): {
                 'rt1': 0.3894,
                 'rt2': 0.0,
                 'ow1': 0.4640,
@@ -185,8 +185,7 @@ class MultiFamilyHouse(SingleFamilyHouse):
                 'gf2': 0.0,
                 'win1': 0.1491,
                 'win2': 0.0,
-                'door': 0.00829},
-            }
+                'door': 0.00829}}
 
         self.building_age_group = None
 
