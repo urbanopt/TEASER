@@ -29,15 +29,15 @@ from teaser.logic.archetypebuildings.urbanrenet.est6 import EST6
 from teaser.logic.archetypebuildings.urbanrenet.est7 import EST7
 from teaser.logic.archetypebuildings.urbanrenet.est8a import EST8a
 from teaser.logic.archetypebuildings.urbanrenet.est8b import EST8b
-from teaser.logic.archetypebuildings.tabula.de.SingleFamilyHouse import \
+from teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse import \
     SingleFamilyHouse as SingleFamilyHouseDe
-from teaser.logic.archetypebuildings.tabula.swe.SingleFamilyHouse import \
+from teaser.logic.archetypebuildings.tabula.swe.singlefamilyhouse import \
     SingleFamilyHouse as SingleFamilyHouseSwe
 from teaser.logic.archetypebuildings.tabula.de.terracedhouse import \
     TerracedHouse
-from teaser.logic.archetypebuildings.tabula.de.MultiFamilyHouse import \
+from teaser.logic.archetypebuildings.tabula.de.multifamilyhouse import \
     MultiFamilyHouse as MultiFamilyHouseDe
-from teaser.logic.archetypebuildings.tabula.swe.MultiFamilyHouse import \
+from teaser.logic.archetypebuildings.tabula.swe.multifamilyhouse import \
     MultiFamilyHouse as MultiFamilyHouseSwe
 from teaser.logic.archetypebuildings.tabula.de.apartmentblock import \
     ApartmentBlock
