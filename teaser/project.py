@@ -29,12 +29,16 @@ from teaser.logic.archetypebuildings.urbanrenet.est6 import EST6
 from teaser.logic.archetypebuildings.urbanrenet.est7 import EST7
 from teaser.logic.archetypebuildings.urbanrenet.est8a import EST8a
 from teaser.logic.archetypebuildings.urbanrenet.est8b import EST8b
-from teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse import \
-    SingleFamilyHouse
+from teaser.logic.archetypebuildings.tabula.de.SingleFamilyHouse import \
+    SingleFamilyHouse as SingleFamilyHouseDe
+from teaser.logic.archetypebuildings.tabula.swe.SingleFamilyHouse import \
+    SingleFamilyHouse as SingleFamilyHouseSwe
 from teaser.logic.archetypebuildings.tabula.de.terracedhouse import \
     TerracedHouse
-from teaser.logic.archetypebuildings.tabula.de.multifamilyhouse import \
-    MultiFamilyHouse
+from teaser.logic.archetypebuildings.tabula.de.MultiFamilyHouse import \
+    MultiFamilyHouse as MultiFamilyHouseDe
+from teaser.logic.archetypebuildings.tabula.swe.MultiFamilyHouse import \
+    MultiFamilyHouse as MultiFamilyHouseSwe
 from teaser.logic.archetypebuildings.tabula.de.apartmentblock import \
     ApartmentBlock
 from teaser.logic.archetypebuildings.bmvbs.singlefamilydwelling import \
@@ -219,7 +223,7 @@ class Project(object):
             ass_error_type
 
         for bldg in self.buildings:
-            if isinstance(bldg, SingleFamilyHouse):
+            if isinstance(bldg, SingleFamilyHouseDe):
                 if self.data.used_statistic != 'tabula_de':
                     self.data = DataClass(used_statistic='tabula_de')
                 if year_of_retrofit is not None or window_type is not None or \
@@ -513,7 +517,7 @@ class Project(object):
         type_bldg : Instance of Archetype Building
 
         """
-        ass_error_method = "only'tabula_de', 'iwu' and 'urbanrenet' " \
+        ass_error_method = "only'tabula_de', 'tabula_swe', 'iwu' and 'urbanrenet' " \
                            "are valid methods for residential archetype " \
                            "generation"
 
@@ -543,7 +547,7 @@ class Project(object):
 
             if usage == 'single_family_house':
 
-                type_bldg = SingleFamilyHouse(
+                type_bldg = SingleFamilyHouseDe(
                     self,
                     name,
                     year_of_construction,
@@ -554,6 +558,7 @@ class Project(object):
                     construction_type)
                 type_bldg.generate_archetype()
                 return type_bldg
+
 
             elif usage == 'terraced_house':
 
@@ -571,7 +576,7 @@ class Project(object):
 
             elif usage == 'multi_family_house':
 
-                type_bldg = MultiFamilyHouse(
+                type_bldg = MultiFamilyHouseDe(
                     self,
                     name,
                     year_of_construction,
@@ -597,6 +602,50 @@ class Project(object):
 
                 type_bldg.generate_archetype()
                 return type_bldg
+
+        if method == 'tabula_swe':
+
+            if self.data is None:
+                self.data = DataClass(used_statistic=method)
+            elif self.data.used_statistic != 'tabula_swe':
+                self.data = DataClass(used_statistic=method)
+
+            ass_error_usage_tabula = "only 'single_family_house' and"
+            "'multi_family_house are"
+            "valid usages for iwu archetype method"
+            assert usage in ['single_family_house',
+                             'multi_family_house'], \
+                ass_error_usage_tabula
+
+            if usage == 'single_family_house':
+
+                type_bldg = SingleFamilyHouseSwe(
+                    self,
+                    name,
+                    year_of_construction,
+                    number_of_floors,
+                    height_of_floors,
+                    net_leased_area,
+                    with_ahu,
+                    construction_type)
+                type_bldg.generate_archetype()
+                return type_bldg
+
+
+            elif usage == 'multi_family_house':
+
+                type_bldg = MultiFamilyHouseSwe(
+                    self,
+                    name,
+                    year_of_construction,
+                    number_of_floors,
+                    height_of_floors,
+                    net_leased_area,
+                    with_ahu,
+                    construction_type)
+                type_bldg.generate_archetype()
+                return type_bldg
+
 
         elif method == 'iwu':
 

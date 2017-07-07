@@ -332,7 +332,7 @@ class Test_tabula_mfh(object):
         Test for area estimation of tabula mfh
         """
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1960,
@@ -361,7 +361,7 @@ class Test_tabula_mfh(object):
         Test for area estimation of tabula mfh
         """
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1975,
@@ -390,7 +390,7 @@ class Test_tabula_mfh(object):
         Test for area estimation of tabula mfh
         """
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1985,
@@ -419,7 +419,7 @@ class Test_tabula_mfh(object):
         Test for area estimation of tabula mfh
         """
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1995,
@@ -448,7 +448,7 @@ class Test_tabula_mfh(object):
         Test for area estimation of tabula mfh
         """
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=2005,
@@ -1799,7 +1799,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_standard_mfh_1960(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1960,
@@ -1841,7 +1841,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_standard_mfh_1975(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1975,
@@ -1883,7 +1883,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_standard_mfh_1985(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1985,
@@ -1925,7 +1925,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_standard_mfh_1995(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1995,
@@ -1967,7 +1967,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_standard_mfh_2005(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=2005,
@@ -2009,7 +2009,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_retrofit_mfh_1960(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1960,
@@ -2051,7 +2051,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_retrofit_mfh_1975(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1975,
@@ -2093,7 +2093,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_retrofit_mfh_1985(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1985,
@@ -2135,7 +2135,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_retrofit_mfh_1995(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1995,
@@ -2177,7 +2177,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_retrofit_mfh_2005(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=2005,
@@ -2223,7 +2223,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_retrofit_adv_mfh_1960(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1960,
@@ -2265,7 +2265,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_retrofit_adv_mfh_1975(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1975,
@@ -2307,7 +2307,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_retrofit_adv_mfh_1985(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1985,
@@ -2349,7 +2349,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_retrofit_adv_mfh_1995(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=1995,
@@ -2391,7 +2391,7 @@ class Test_tabula_mfh(object):
     def test_tabula_swe_uvalue_retrofit_adv_mfh_2005(self):
 
         prj.add_residential(
-            method='tabula_de',
+            method='tabula_swe',
             usage='multi_family_house',
             name="ResidentialBuilding",
             year_of_construction=2005,
