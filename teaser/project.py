@@ -559,7 +559,6 @@ class Project(object):
                 type_bldg.generate_archetype()
                 return type_bldg
 
-
             elif usage == 'terraced_house':
 
                 type_bldg = TerracedHouse(
@@ -631,7 +630,6 @@ class Project(object):
                 type_bldg.generate_archetype()
                 return type_bldg
 
-
             elif usage == 'multi_family_house':
 
                 type_bldg = MultiFamilyHouseSwe(
@@ -645,7 +643,6 @@ class Project(object):
                     construction_type)
                 type_bldg.generate_archetype()
                 return type_bldg
-
 
         elif method == 'iwu':
 
