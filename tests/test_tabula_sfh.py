@@ -326,6 +326,161 @@ class Test_tabula_sfh(object):
         assert round(
             sum(wall.area for wall in
                 prj.buildings[-1].thermal_zones[-1].doors), 1) == 2.6
+                
+    def test_tabula_swe_sfh_area_1960(self):
+        """
+        Test for area estimation of tabula sfh
+        """
+        prj.set_default()
+        prj.data = None
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1960,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106)
+
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].rooftops), 1) == 125
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].outer_walls), 1) == 100
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].ground_floors), 1) == 125
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].windows), 1) == 22
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].doors), 1) == 2.0
+                
+    def test_tabula_swe_sfh_area_1975(self):
+        """
+        Test for area estimation of tabula sfh
+        """
+        prj.set_default()
+        prj.data = None
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1975,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106)
+
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].rooftops), 1) == 125
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].outer_walls), 1) == 100
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].ground_floors), 1) == 125
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].windows), 1) == 22
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].doors), 1) == 2.0
+                
+    def test_tabula_swe_sfh_area_1985(self):
+        """
+        Test for area estimation of tabula sfh
+        """
+        prj.set_default()
+        prj.data = None
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1985,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106)
+
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].rooftops), 1) == 125
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].outer_walls), 1) == 100
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].ground_floors), 1) == 125
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].windows), 1) == 22
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].doors), 1) == 2.0
+                
+    def test_tabula_swe_sfh_area_1995(self):
+        """
+        Test for area estimation of tabula sfh
+        """
+        prj.set_default()
+        prj.data = None
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1995,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106)
+
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].rooftops), 1) == 125
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].outer_walls), 1) == 100
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].ground_floors), 1) == 125
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].windows), 1) == 22
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].doors), 1) == 2.0
+                
+    def test_tabula_swe_sfh_area_2005(self):
+        """
+        Test for area estimation of tabula sfh
+        """
+        prj.set_default()
+        prj.data = None
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=2005,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106)
+
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].rooftops), 1) == 125
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].outer_walls), 1) == 100
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].ground_floors), 1) == 125
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].windows), 1) == 22
+        assert round(
+            sum(wall.area for wall in
+                prj.buildings[-1].thermal_zones[-1].doors), 1) == 2.0
 
     def test_tabula_uvalue_standard_sfh_1859(self):
 
@@ -1657,7 +1812,547 @@ class Test_tabula_sfh(object):
             1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
                  * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
             1) == round((1 / (1 / 0.8 - 0.17)), 1)
+            
+    def test_tabula_swe_uvalue_standard_sfh_1960(self):
 
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1960,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.29 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.60 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.28 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 2.34 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 3.0 - 0.17)), 1)
+            
+    def test_tabula_swe_uvalue_standard_sfh_1975(self):
+
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1975,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.21 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.31 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.32 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 2.30 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 2.8 - 0.17)), 1)
+            
+    def test_tabula_swe_uvalue_standard_sfh_1985(self):
+
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1985,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.15 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.21 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.27 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 2.01 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 2.8 - 0.17)), 1)
+            
+    def test_tabula_swe_uvalue_standard_sfh_1995(self):
+
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1995,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.12 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.17 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.24 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 1.94 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 2.8 - 0.17)), 1)
+            
+    def test_tabula_swe_uvalue_standard_sfh_2005(self):
+
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=2005,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.12 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.20 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.18 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 1.87 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 1.5 - 0.17)), 1)
+            
+    def test_tabula_swe_uvalue_retrofit_sfh_1960(self):
+
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1960,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106, construction_type="tabula_retrofit")
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.11 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.33 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.21 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 0.90 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 1.20 - 0.17)), 1)
+            
+    def test_tabula_swe_uvalue_retrofit_sfh_1975(self):
+
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1975,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106, construction_type="tabula_retrofit")
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.10 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.22 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.24 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 0.90 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 1.20 - 0.17)), 1)
+            
+    def test_tabula_swe_uvalue_retrofit_sfh_1985(self):
+
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1985,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106, construction_type="tabula_retrofit")
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.08 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.16 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.21 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 0.90 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 1.20 - 0.17)), 1)
+            
+    def test_tabula_swe_uvalue_retrofit_sfh_1995(self):
+
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1995,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106, construction_type="tabula_retrofit")
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.07 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.14 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.19 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 0.90 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 1.20 - 0.17)), 1)
+
+    def test_tabula_swe_uvalue_retrofit_sfh_2005(self):
+
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=2005,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106, construction_type="tabula_retrofit")
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.07 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.16 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.15 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 0.90 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 1.20 - 0.17)), 1)
+            
+    def test_tabula_swe_uvalue_retrofit_adv_sfh_1960(self):
+
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1960,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106, , construction_type="tabula_adv_retrofit")
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.06 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.26 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.21 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 0.76 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 0.9 - 0.17)), 1)
+            
+    def test_tabula_swe_uvalue_retrofit_adv_sfh_1975(self):
+
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1975,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106, , construction_type="tabula_adv_retrofit")
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.05 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.19 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.23 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 0.76 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 0.9 - 0.17)), 1)
+            
+    def test_tabula_swe_uvalue_retrofit_adv_sfh_1985(self):
+
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1985,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106, , construction_type="tabula_adv_retrofit")
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.05 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.15 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.20 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 0.76 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 0.9 - 0.17)), 1)
+            
+    def test_tabula_swe_uvalue_retrofit_adv_sfh_1995(self):
+
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=1995,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106, , construction_type="tabula_adv_retrofit")
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.05 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.12 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.18 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 0.76 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 0.9 - 0.17)), 1)
+            
+    def test_tabula_swe_uvalue_retrofit_adv_sfh_2005(self):
+
+        prj.add_residential(
+            method='tabula_swe',
+            usage='single_family_house',
+            name="ResidentialBuilding",
+            year_of_construction=2005,
+            number_of_floors=2,
+            height_of_floors=3.2,
+            net_leased_area=106, , construction_type="tabula_adv_retrofit")
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].rooftops[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].rooftops[-1].area),
+            1) == round((1 / (1 / 0.05 - 0.21)), 1)
+            
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].outer_walls[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].outer_walls[-1].area),
+            1) == round((1 / (1 / 0.14 - 0.17)), 1)
+        
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].ground_floors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].ground_floors[-1].area),
+            1) == round((1 / (1 / 0.15 - 0.34)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].windows[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].windows[-1].area),
+            1) == round((1 / (1 / 0.76 - 0.17)), 1)
+
+        assert round(
+            1 / (prj.buildings[-1].thermal_zones[-1].doors[-1].r_conduc
+                 * prj.buildings[-1].thermal_zones[-1].doors[-1].area),
+            1) == round((1 / (1 / 0.9 - 0.17)), 1)
+            
     def test_tabula_retrofit(self):
         """
         Test for retrofit of tabula
