@@ -226,6 +226,8 @@ class Project(object):
             if isinstance(bldg, SingleFamilyHouseDe):
                 if self.data.used_statistic != 'tabula_de':
                     self.data = DataClass(used_statistic='tabula_de')
+                if self.data.used_statistic != 'tabula_swe':
+                    self.data = DataClass(used_statistic='tabula_swe')
                 if year_of_retrofit is not None or window_type is not None or \
                         material is not None:
                     warnings.warn("you are retrofitting archetype building of "
@@ -521,14 +523,14 @@ class Project(object):
                            "are valid methods for residential archetype " \
                            "generation"
 
-        assert method in ['tabula_de', 'iwu', 'urbanrenet'], ass_error_method
+        assert method in ['tabula_de', 'tabula_swe', 'iwu', 'urbanrenet'], ass_error_method
 
         ass_error_apart = (
             "The keyword number_of_apartmens does not have any "
             "effect on archetype generation for 'iwu' or"
             "'tabula_de', see docs for more information")
 
-        if method in ['iwu', 'tabula_de'] and number_of_apartments is not None:
+        if method in ['iwu', 'tabula_de', 'tabula_swe'] and number_of_apartments is not None:
             warnings.warn(ass_error_apart)
 
         if method == 'tabula_de':
