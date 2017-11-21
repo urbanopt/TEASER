@@ -91,7 +91,7 @@ class Layer(object):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert thickness to float")
 
         if value is not None:

@@ -514,7 +514,7 @@ class ThermalZone(object):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert zone area to float")
 
         if self.parent is not None:
@@ -544,7 +544,7 @@ class ThermalZone(object):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert zone volume to float")
 
         if self.parent is not None:
@@ -573,7 +573,7 @@ class ThermalZone(object):
             try:
                 value = float(value)
                 self._infiltration_rate = value
-            except:
+            except ValueError:
                 raise ValueError("Can't convert infiltration rate to float")
 
     @property
@@ -590,7 +590,7 @@ class ThermalZone(object):
             try:
                 value = float(value)
                 self._t_inside = value
-            except:
+            except ValueError:
                 raise ValueError("Can't convert temperature to float")
 
     @property
@@ -608,5 +608,5 @@ class ThermalZone(object):
             try:
                 value = float(value)
                 self._t_outside = value
-            except:
+            except ValueError:
                 raise ValueError("Can't convert temperature to float")

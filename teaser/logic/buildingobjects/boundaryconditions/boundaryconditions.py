@@ -419,7 +419,7 @@ class BoundaryConditions(UseConditions):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert temperature to float")
 
         self._set_temp_heat = value
@@ -438,7 +438,7 @@ class BoundaryConditions(UseConditions):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert temperature to float")
 
         self._set_temp_cool = value
@@ -458,7 +458,7 @@ class BoundaryConditions(UseConditions):
             try:
                 value = float(value)
                 self._temp_set_back = value
-            except:
+            except ValueError:
                 raise ValueError("Can't convert temperature to float")
 
     @property
@@ -476,7 +476,7 @@ class BoundaryConditions(UseConditions):
             try:
                 value = float(value)
                 self._min_temp_heat = value
-            except:
+            except ValueError:
                 raise ValueError("Can't convert temperature to float")
 
     @property
@@ -494,7 +494,7 @@ class BoundaryConditions(UseConditions):
             try:
                 value = float(value)
                 self._max_temp_cool = value
-            except:
+            except ValueError:
                 raise ValueError("Can't convert temperature to float")
 
     @property
@@ -511,7 +511,7 @@ class BoundaryConditions(UseConditions):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert humidity to float")
 
         self._rel_humidity = value
@@ -530,7 +530,7 @@ class BoundaryConditions(UseConditions):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert min_air_exchange to float")
 
         self._min_air_exchange = value
@@ -549,7 +549,7 @@ class BoundaryConditions(UseConditions):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert AHU airflow to float")
 
         self._min_ahu = value
@@ -568,7 +568,7 @@ class BoundaryConditions(UseConditions):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert AHU airflow to float")
 
         self._max_ahu = value
@@ -587,7 +587,7 @@ class BoundaryConditions(UseConditions):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert persons to float")
 
         self._persons = value
@@ -606,7 +606,7 @@ class BoundaryConditions(UseConditions):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert machines to float")
 
         self._machines = value
@@ -625,7 +625,7 @@ class BoundaryConditions(UseConditions):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert lighting_power to float")
 
         self._lighting_power = value

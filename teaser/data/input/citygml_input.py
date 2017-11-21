@@ -137,7 +137,7 @@ def _create_building(bldg, city_object):
                 try: #modelling option 1
                     bldg.gml_surfaces.append(SurfaceGML(
                         comp_member.Surface.exterior.Ring.posList.value()))
-                except: #modelling option 2
+                except Exception: #modelling option 2
                     for pos_list in comp_member.Surface.surfaceMember:
                         bldg.gml_surfaces.append(SurfaceGML(
                             pos_list.Surface.exterior.Ring.posList.value()))
@@ -156,7 +156,7 @@ def _create_building_part(bldg, part):
                 try: #modelling option 1
                     bldg.gml_surfaces.append(SurfaceGML(
                         comp_member.Surface.exterior.Ring.posList.value()))
-                except: #modelling option 2
+                except Exception: #modelling option 2
                     for pos_list in comp_member.Surface.surfaceMember:
                         bldg.gml_surfaces.append(SurfaceGML(
                             pos_list.Surface.exterior.Ring.posList.value()))

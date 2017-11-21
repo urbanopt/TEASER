@@ -2556,11 +2556,11 @@ class MainUI(QDialog):
         '''
 
         # clears the list in python 3
-        try:
+        if sys.version_info > (3, 0, 0):
             self.element_layer_model_set_all_constr.clear()
             self.all_constr_layer_list.clear()
-        # clears the list in pyhton 2
-        except:
+        # clears the list in python 2
+        else:
             self.element_layer_model_set_all_constr = QStandardItemModel()
             self.all_constr_layer_list = []
 
@@ -5058,7 +5058,7 @@ class MainUI(QDialog):
         try:
             self.construction_type_switched = True
             self.element_material_list_view.doubleClicked.disconnect()
-        except:
+        except Exception:
             pass
 
     def switch_material(self):
@@ -5470,7 +5470,7 @@ class MainUI(QDialog):
         try:
             cIndex = self.new_layerX_material_combobox.currentText()
             check = 0
-        except:
+        except Exception:
             cIndex = self.new_layer_material_combobox.currentText()
             check = 1
         for material in self.materials:

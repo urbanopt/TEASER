@@ -64,7 +64,10 @@ class DataClass(object):
         try:
             __xml_file_tb = open(self.path_tb, 'r+')
             version_parse = et.parse(self.path_tb)
-        except:
+        except et.ParseError:
+            __xml_file_tb = open(self.path_tb, 'w')
+            version_parse = False
+        except Exception:
             __xml_file_tb = open(self.path_tb, 'w')
             version_parse = False
 
@@ -94,7 +97,10 @@ class DataClass(object):
         try:
             __xml_file_uc = open(self.path_uc, 'r+')
             version_parse = et.parse(self.path_uc)
-        except:
+        except et.ParseError:
+            __xml_file_uc = open(self.path_uc, 'w')
+            version_parse = False
+        except Exception:
             __xml_file_uc = open(self.path_uc, 'w')
             version_parse = False
 
@@ -124,7 +130,10 @@ class DataClass(object):
         try:
             __xml_file_mat = open(self.path_mat, 'r+')
             version_parse = et.parse(self.path_mat)
-        except:
+        except et.ParseError:
+            __xml_file_mat = open(self.path_mat, 'w')
+            version_parse = False
+        except Exception:
             __xml_file_mat = open(self.path_mat, 'w')
             version_parse = False
 

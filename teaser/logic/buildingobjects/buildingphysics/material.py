@@ -171,7 +171,7 @@ class Material(object):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert thermal conduction to float")
 
         if value is not None:
@@ -201,7 +201,7 @@ class Material(object):
             try:
                 value = float(value)
                 self._density = value
-            except:
+            except ValueError:
                 raise ValueError("Can't convert density to float")
 
     @property
@@ -219,7 +219,7 @@ class Material(object):
             try:
                 value = float(value)
                 self._heat_capac = value
-            except:
+            except ValueError:
                 raise ValueError("Can't convert heat capacity to float")
 
     @property
@@ -237,7 +237,7 @@ class Material(object):
             try:
                 value = float(value)
                 self._solar_absorp = value
-            except:
+            except ValueError:
                 raise ValueError("Can't convert solar absorption to float")
 
     @property
@@ -255,7 +255,7 @@ class Material(object):
             try:
                 value = float(value)
                 self._ir_emissivity = value
-            except:
+            except ValueError:
                 raise ValueError("Can't convert emissivity to float")
 
     @property
@@ -273,5 +273,5 @@ class Material(object):
             try:
                 value = float(value)
                 self._transmittance = value
-            except:
+            except ValueError:
                 raise ValueError("Can't convert transmittance to float")

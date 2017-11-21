@@ -30,6 +30,6 @@ class ListViewZonesFiller(QItemDelegate):
         text = index.data(Qt.DisplayRole)        
         try:
             painter.drawText(option.rect, Qt.AlignLeft, text.toString())
-        except:
+        except Exception:
             painter.drawText(option.rect, Qt.AlignLeft, text)
         painter.restore()

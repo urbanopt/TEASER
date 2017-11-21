@@ -434,7 +434,7 @@ class BuildingElement(object):
         else:
             try:
                 value = int(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert year of retrofit to float")
 
         if value is not None:
@@ -487,7 +487,7 @@ class BuildingElement(object):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert inner convection to float")
 
         if value is not None:
@@ -511,7 +511,7 @@ class BuildingElement(object):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert inner radiation to float")
 
         if value is not None:
@@ -535,7 +535,7 @@ class BuildingElement(object):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert outer convection to float")
 
         if value is not None:
@@ -559,7 +559,7 @@ class BuildingElement(object):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert outer radiation to float")
 
         if value is not None:
@@ -583,7 +583,7 @@ class BuildingElement(object):
         else:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError("Can't convert element area to float")
 
         if value is not None:
@@ -616,7 +616,7 @@ class BuildingElement(object):
             try:
                 value = float(value)
                 self._tilt = value
-            except:
+            except ValueError:
                 raise ValueError("Can't convert tilt to float")
 
     @property
@@ -634,7 +634,7 @@ class BuildingElement(object):
             try:
                 value = int(value)
                 self._year_of_construction = value
-            except:
+            except ValueError:
                 raise ValueError("Can't convert year to int")
 
     @property

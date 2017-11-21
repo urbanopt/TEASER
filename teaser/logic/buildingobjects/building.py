@@ -624,7 +624,7 @@ class Building(object):
                 value = int(value)
                 self.__year_of_construction = value
 
-            except:
+            except ValueError:
                 raise ValueError("Can't convert year of construction to int")
 
     @property
@@ -642,7 +642,7 @@ class Building(object):
                 value = int(value)
                 self.__number_of_floors = value
 
-            except:
+            except ValueError:
                 raise ValueError("Can't convert number of floors to int")
 
     @property
@@ -660,7 +660,7 @@ class Building(object):
                 value = float(value)
                 self.__height_of_floors = value
 
-            except:
+            except ValueError:
                 raise ValueError("Can't convert height of floors to float")
 
     @property
@@ -678,7 +678,7 @@ class Building(object):
             try:
                 value = float(value)
                 self.__net_leased_area = value
-            except:
+            except ValueError:
                 raise ValueError("Can't convert net leased area to float")
 
     @property
