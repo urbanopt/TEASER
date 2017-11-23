@@ -9,7 +9,6 @@ import re
 import warnings
 from teaser.logic.buildingobjects.calculation.aixlib import AixLib
 from teaser.logic.buildingobjects.calculation.ibpsa import IBPSA
-from teaser.project import Project
 
 
 from teaser.logic.buildingobjects.buildingsystems.buildingahu \
@@ -576,17 +575,12 @@ class Building(object):
 
             self.__parent = value
 
-            if issubclass(Building, value):
-                print('Is subclass')
-                if self in self.__parent.buildings:
-                    pass
-                else:
-                    self.__parent.buildings.append(self)
+            if self in self.__parent.buildings:
+                pass
             else:
-                print('Hello')
+                self.__parent.buildings.append(self)
 
         else:
-
             self.__parent = None
 
     @property
