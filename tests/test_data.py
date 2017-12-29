@@ -10,6 +10,9 @@ import helptest
 
 from teaser.logic import utilities
 from teaser.project import Project
+from teaser.logic.simulation.vdi_core import VDICore
+from teaser.data.weatherdata import WeatherData
+from teaser.logic.simulation import low_order_VDI
 import teaser.examples.verification.vdi6007_testcases.vdi6007_case01 as vdi1
 import teaser.examples.verification.vdi6007_testcases.vdi6007_case01_new_core as vdi1_new_core
 import teaser.examples.verification.vdi6007_testcases.vdi6007_case02_new_core as vdi2_new_core
@@ -37,9 +40,6 @@ prj = Project(True)
 import os
 import numpy as np
 from teaser.project import Project
-# import teaser.logic.simulation.VDI_6007.weather as weat
-# import teaser.logic.simulation.VDI_6007.low_order_VDI as low_order_VDI
-# import teaser.logic.simulation.VDI_6007.equal_air_temperature as equ_air
 
 
 class Test_teaser(object):
@@ -3149,29 +3149,22 @@ class Test_teaser(object):
         #  Extract thermal_zone
         thermal_zone = prj.buildings[0].thermal_zones[0]
 
-        #  Calculate beta angle
-        beta = thermal_zone.model_attr.tilt_facade
+        #  Calculate beta angle, VDI core azimuth usage
+        #  -> now calculated within VDI_6007._solar_radiation
 
-        gamma = thermal_zone.model_attr.orientation_facade
+        weather = WeatherData()
+        # XXX workaround...
+        if thermal_zone.parent.parent.weather_data is None:
+            thermal_zone.parent.parent.weather_data = weather
 
-        #  Recalculate to VDI core azimuth usage
-        for i in range(len(gamma)):
-            angle = gamma[i]
-            if angle == -1 or angle == -2:
-                gamma[i] = 0.0
-            else:
-                gamma[i] = angle - 180
-
-        weather = weat.Weather(
-            beta=beta,
-            gamma=gamma,
-            weather_path=None,
+        core = VDICore(thermal_zone)
+        # XXX might not be necessary
+        sun_rad = core._solar_radiation(
             albedo=0.2,
-            timeZone=1,
+            time_zone=1,
             altitude=0,
             location=(49.5, 8.5),
-            timestep=3600,
-            do_sun_rad=True)
+        )
 
         timesteps = 365 * 24
 
@@ -3221,7 +3214,7 @@ class Test_teaser(object):
         #  Solar radiation input on each external area in W/m2
         #  #-------------------------------------------------------
         # solarRad_in = np.zeros((timesteps, 5))
-        solarRad_in = np.transpose(weather.sun_rad)
+        solarRad_in = np.transpose(sun_rad)
 
         source_igRad = np.zeros(timesteps)
 
@@ -3230,40 +3223,32 @@ class Test_teaser(object):
         #  Equal air temperature based on VDI in K
         #  #-------------------------------------------------------
         # #  equalAirTemp = np.zeros(timesteps) + 273.15 + 10
-        # equalAirTemp = weather.temp + 0.5 + 273.15
+        # equalAirTemp = weather.air_temp + 0.5 + 273.15
 
+        # XXX might not be necessary
         t_black_sky = np.zeros(timesteps) + 273.15
 
-        sunblind_in = np.zeros_like(solarRad_in)
-        sunblind_in[solarRad_in > i_max] = 0.85
+        # sunblind_in calculated within VDI_6007._eq_air_temp
 
-        eq_air_params = {"aExt": thermal_zone.model_attr.solar_absorp_ow,
-                         # coefficient of absorption of exterior walls (outdoor)
-                         "eExt": thermal_zone.model_attr.ir_emissivity_outer_ow,
-                         # coefficient of emission of exterior walls (outdoor)
-                         "wfWall": thermal_zone.model_attr.weightfactor_ow,
-                         # weight factors of the walls
-                         "wfWin": thermal_zone.model_attr.weightfactor_win,
-                         # weight factors of the windows
-                         "wfGro": thermal_zone.model_attr.weightfactor_ground,
-                         # weight factor of the ground (0 if not considered)
-                         "T_Gro": thermal_zone.t_ground,
-                         "alpha_wall_out": thermal_zone.model_attr.alpha_conv_outer_ow,
-                         "alpha_rad_wall": thermal_zone.model_attr.alpha_rad_outer_ow,
+        # other params calculated within VDI_6007._eq_air_temp
+        eq_air_params = {
                          "withLongwave": False}
 
-        t_dry_bulb = weather.temp + 273.15
+        # XXX assuming weather.air_temp == core.weather_data.air_temp
+        # t_dry_bulb = weather.air_temp + 273.15
 
-        equalAirTemp = equ_air.equal_air_temp(HSol=solarRad_in,
-                                              TBlaSky=t_black_sky,
-                                              TDryBul=t_dry_bulb,
-                                              sunblind=sunblind_in,
-                                              params=eq_air_params)
+        equalAirTemp = core._eq_air_temp(
+            h_sol=solarRad_in,
+            t_black_sky=t_black_sky,
+            with_longwave=eq_air_params['withLongwave'],
+            i_max=i_max,
+            # TDryBul=t_dry_bulb,
+        )
 
         #  Environment temperatures in K
         #  #-------------------------------------------------------
         # weatherTemperature = np.zeros(timesteps) + 273.15 + 10  # in K
-        weatherTemperature = weather.temp + 273.15
+        weatherTemperature = weather.air_temp + 273.15
 
         #  Ventilation rate: Fresh air at temperature weatherTemperature in m3/s
         #  #-------------------------------------------------------
