@@ -7,6 +7,7 @@ Created July 2015
 import math
 import os
 import helptest
+import numpy as np
 
 from teaser.logic import utilities
 from teaser.project import Project
@@ -36,10 +37,6 @@ import teaser.examples.verification.vdi6007_testcases.vdi6007_case09_new_core as
 # import teaser.examples.verification.vdi6007_testcases.vdi6007_case12 as vdi12
 
 prj = Project(True)
-
-import os
-import numpy as np
-from teaser.project import Project
 
 
 class Test_teaser(object):
