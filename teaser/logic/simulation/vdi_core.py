@@ -188,7 +188,13 @@ class VDICore(object):
 
         """
         #  FIXME: Deal with input values (to weather / project?)
-        timesteps = 60 * 60 * 24
+        if self.weather_data is None:
+            timesteps = 60 * 60 * 24
+        else:
+            # XXX quick solution
+            # works for tests/test_data.py::Test_teaser::test_sim_results
+            # where it rather looks like 365 * 24
+            timesteps = len(self.weather_data.direct_radiation)
         dt = 3600
         initial_time = 0
 
