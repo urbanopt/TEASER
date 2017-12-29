@@ -3155,13 +3155,6 @@ class Test_teaser(object):
             thermal_zone.parent.parent.weather_data = weather
 
         core = VDICore(thermal_zone)
-        # XXX might not be necessary
-        sun_rad = core._solar_radiation(
-            albedo=0.2,
-            time_zone=1,
-            altitude=0,
-            location=(49.5, 8.5),
-        )
 
         timesteps = 365 * 24
 
@@ -3210,8 +3203,7 @@ class Test_teaser(object):
 
         #  Solar radiation input on each external area in W/m2
         #  #-------------------------------------------------------
-        # solarRad_in = np.zeros((timesteps, 5))
-        solarRad_in = np.transpose(sun_rad)
+        # solarRad_in now calculated within VDI_6007.__init__
 
         source_igRad = np.zeros(timesteps)
 
@@ -3235,7 +3227,7 @@ class Test_teaser(object):
         # t_dry_bulb = weather.air_temp + 273.15
 
         equalAirTemp = core._eq_air_temp(
-            h_sol=solarRad_in,
+            h_sol=core.solar_rad_in,
             t_black_sky=t_black_sky,
             with_longwave=eq_air_params['withLongwave'],
             i_max=i_max,
@@ -3284,7 +3276,7 @@ class Test_teaser(object):
         t_air, q_hc, q_iw, q_ow = \
             low_order_VDI.reducedOrderModelVDI(houseData=houseData,
                                                weatherTemperature=weatherTemperature,
-                                               solarRad_in=solarRad_in,
+                                               solarRad_in=core.solar_rad_in,
                                                equalAirTemp=equalAirTemp,
                                                alphaRad=alphaRad,
                                                ventRate=ventRate,
@@ -3321,7 +3313,7 @@ class Test_teaser(object):
         t_air2, q_hc2, q_iw, q_ow = \
             low_order_VDI.reducedOrderModelVDI(houseData=houseData,
                                                weatherTemperature=weatherTemperature,
-                                               solarRad_in=solarRad_in,
+                                               solarRad_in=core.solar_rad_in,
                                                equalAirTemp=equalAirTemp,
                                                alphaRad=alphaRad,
                                                ventRate=ventRate,
