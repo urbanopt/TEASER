@@ -87,7 +87,7 @@ class VDICore(object):
         self.heater_order = np.array([1, 2, 3])
         self.cooler_order = np.array([1, 2, 3])
 
-    def _eq_air_temp(self, h_sol, t_black_sky, with_longwave=False, i_max=100):
+    def _eq_air_temp(self, h_sol, t_black_sky=273.15, with_longwave=False, i_max=100):
         """
         Calculates equal air temperature
 
@@ -102,7 +102,9 @@ class VDICore(object):
         Parameters
         ----------
         h_sol
-        sunblind
+        t_black_sky : numpy.ndarray
+            (use 0 °C by default; if single number, broadcast to all
+            timesteps)
         with_longwave
         i_max
 
