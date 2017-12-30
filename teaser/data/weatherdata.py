@@ -74,8 +74,15 @@ class WeatherData(object):
     def __delitem__(self, key):
         """Delete self[key]. (deleting items of all lists contained)
         """
-        del self.air_temp[key]
-        del self.direct_radiation[key]
-        del self.diffuse_radiation[key]
-        del self.sky_radiation[key]
-        del self.earth_radiation[key]
+        try:
+            del self.air_temp[key]
+            del self.direct_radiation[key]
+            del self.diffuse_radiation[key]
+            del self.sky_radiation[key]
+            del self.earth_radiation[key]
+        except ValueError:  # numpy.ndarray does not support del
+            self.air_temp = np.delete(self.air_temp, key)
+            self.direct_radiation = np.delete(self.direct_radiation, key)
+            self.diffuse_radiation = np.delete(self.diffuse_radiation, key)
+            self.sky_radiation = np.delete(self.sky_radiation, key)
+            self.earth_radiation = np.delete(self.earth_radiation, key)
