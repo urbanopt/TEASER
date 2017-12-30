@@ -59,8 +59,8 @@ class VDICore(object):
         self.room_air_temperature = None
 
         #  Todo: Get heater limits from thermal_zone
-        self.heater_limit = [1e10, 1e10, 1e10]
-        self.cooler_limit = [-1e10, -1e10, -1e10]
+        self.heater_limit = np.array([1e10, 1e10, 1e10])
+        self.cooler_limit = np.array([-1e10, -1e10, -1e10])
 
         # time setting for simulation
         self.timesteps = timesteps
@@ -849,13 +849,21 @@ class VDICore(object):
             rhs[5] = density_air * heat_capac_air * volume * t_air_prev / dt
 
             # Calculate current time step
+            if self.heater_limit.ndim >= 2:
+                heater_limit = self.heater_limit[t, :]
+            else:
+                heater_limit = self.heater_limit
+            if self.cooler_limit.ndim >= 2:
+                cooler_limit = self.cooler_limit[t, :]
+            else:
+                cooler_limit = self.cooler_limit
             x = self.calc_timestep(
                 A=A,
                 rhs=rhs,
                 t_set_heating=self.t_set_heating[t],
                 t_set_cooling=self.t_set_cooling[t],
-                heater_limit=self.heater_limit[t, :],
-                cooler_limit=self.cooler_limit[t, :],
+                heater_limit=heater_limit,
+                cooler_limit=cooler_limit,
                 heater_order=self.heater_order,
                 cooler_order=self.cooler_order)
 
