@@ -3149,14 +3149,17 @@ class Test_teaser(object):
         #  Calculate beta angle, VDI core azimuth usage
         #  -> now calculated within VDI_6007._solar_radiation
 
-        weather = WeatherData()
         # XXX workaround...
         if thermal_zone.parent.parent.weather_data is None:
+            weather = WeatherData()
             thermal_zone.parent.parent.weather_data = weather
+        else:
+            weather = thermal_zone.parent.parent.weather_data
 
         core = VDICore(thermal_zone)
 
         timesteps = 365 * 24
+        del weather[timesteps:]
 
         # Load constant house parameters
         if len(thermal_zone.inner_walls) != 0:
