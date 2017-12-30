@@ -6,6 +6,8 @@ from __future__ import division
 import math
 import numpy as np
 
+DEFAULT_TIMESTEPS = 60 * 60 * 24
+
 
 class VDICore(object):
     """Class to handle VDI 6007 simulation directly in Python.
@@ -43,7 +45,7 @@ class VDICore(object):
         describes in which order the different cooling devices are turned on
     """
 
-    def __init__(self, thermal_zone):
+    def __init__(self, thermal_zone, timesteps=DEFAULT_TIMESTEPS):
         """Constructor of DataClass
 
         Parameters
@@ -61,7 +63,7 @@ class VDICore(object):
         self.cooler_limit = [-1e10, -1e10, -1e10]
 
         # time setting for simulation
-        self.timesteps = 60 * 60 * 24
+        self.timesteps = timesteps
 
         self.initial_air_temp = 295.15
         self.initial_inner_wall_temp = 295.15
@@ -110,7 +112,10 @@ class VDICore(object):
         """
         #  Todo: Cleanup docstring
 
-        timesteps = 60 * 60 * 24
+        if h_sol.shape[0] != len(self.weather_data.air_temp):
+            raise ValueError(
+                'Number of entries in h_sol differs from that of weather_data!'
+            )
 
         #  Todo: Where to store t_balck_sky?
         # t_black_sky = np.zeros(timesteps) + 273.15
@@ -189,7 +194,7 @@ class VDICore(object):
         """
         #  FIXME: Deal with input values (to weather / project?)
         if self.weather_data is None:
-            timesteps = 60 * 60 * 24
+            timesteps = self.timesteps
         else:
             # XXX quick solution
             # works for tests/test_data.py::Test_teaser::test_sim_results
@@ -654,7 +659,7 @@ class VDICore(object):
         """
 
         #  Fix number of timesteps
-        timesteps = 24 * 60 * 60
+        timesteps = self.timesteps
         dt = 60
 
         #  Get building parameters
