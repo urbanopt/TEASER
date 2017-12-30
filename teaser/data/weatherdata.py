@@ -70,3 +70,12 @@ class WeatherData(object):
         self.diffuse_radiation = weather_data[:, 2]
         self.sky_radiation = weather_data[:, 3]
         self.earth_radiation = weather_data[:, 4]
+
+    def __delitem__(self, key):
+        """Delete self[key]. (deleting items of all lists contained)
+        """
+        del self.air_temp[key]
+        del self.direct_radiation[key]
+        del self.diffuse_radiation[key]
+        del self.sky_radiation[key]
+        del self.earth_radiation[key]
