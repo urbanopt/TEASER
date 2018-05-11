@@ -42,6 +42,8 @@ class ThermalZone(object):
         Thermal zone volume.
     infiltration_rate : float [1/h]
         Infiltration rate of zone.
+    ventilation_rate : float [1/h]
+        Ventilation rate of zone.
     outer_walls : list
         List of OuterWall instances.
     doors : list
@@ -96,7 +98,8 @@ class ThermalZone(object):
         self.name = None
         self._area = None
         self._volume = None
-        self._infiltration_rate = 0.5
+        self._infiltration_rate = 0.2
+        self._ventilation_rate = 0.4
         self._outer_walls = []
         self._doors = []
         self._rooftops = []
@@ -663,6 +666,24 @@ class ThermalZone(object):
                 self._infiltration_rate = value
             except:
                 raise ValueError("Can't convert infiltration rate to float")
+
+    @property
+    def ventilation_rate(self):
+        return self._ventilation_rate
+
+    @ventilation_rate.setter
+    def ventilation_rate(self, value):
+
+        if isinstance(value, float):
+            self._ventilation_rate = value
+        elif value is None:
+            self._ventilation_rate = value
+        else:
+            try:
+                value = float(value)
+                self._ventilation_rate = value
+            except:
+                raise ValueError("Can't convert ventilation rate to float")
 
     @property
     def t_inside(self):
