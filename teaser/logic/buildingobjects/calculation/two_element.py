@@ -1066,14 +1066,15 @@ class TwoElement(object):
             UA Value of all GroundFloors
         """
         self.heat_load = 0.0
+        effective_ventilation = max([self.thermal_zone.ventilation_rate,
+                                     self.thermal_zone.infiltration_rate])
         ua_value_gf_temp = sum(
             ground.ua_value for ground in self.thermal_zone.ground_floors)
         ua_value_ow_temp = self.ua_value_ow - ua_value_gf_temp
         self.heat_load = \
             ((((ua_value_ow_temp + self.ua_value_win) +
                self.thermal_zone.volume *
-               (self.thermal_zone.infiltration_rate +
-               self.thermal_zone.ventilation_rate) * 1 / 3600 *
+               effective_ventilation * 1 / 3600 *
                self.thermal_zone.heat_capac_air *
                self.thermal_zone.density_air) * (self.thermal_zone.t_inside -
                                                  self.thermal_zone.t_outside))

@@ -109,7 +109,7 @@ class SingleFamilyHouse(Residential):
             with_ahu)
 
         self.construction_type = construction_type
-        self.reheating_factors = {"construction_type": 15, }
+        self.reheating_factors = {"construction_type": 10, }
         self.number_of_floors = number_of_floors
         self.height_of_floors = height_of_floors
 
