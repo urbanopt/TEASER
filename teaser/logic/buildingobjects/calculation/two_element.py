@@ -382,8 +382,6 @@ class TwoElement(object):
         self.orientation_facade = []
         self.heat_load = 0.0
         self.cool_load = 0.0
-        # According to DIN EN 12831 Appendix F2/F3
-        self.spec_reheating_load = 14
 
     def calc_attributes(self):
         """Calls all necessary function to calculate model attributes"""
@@ -1081,7 +1079,8 @@ class TwoElement(object):
                                                  self.thermal_zone.t_outside))
              + (ua_value_gf_temp * (self.thermal_zone.t_inside -
                                     self.thermal_zone.t_ground)) +
-             self.thermal_zone.area * self.thermal_zone.reheating)
+             self.thermal_zone.area *
+             self.thermal_zone.parent.reheating_factors["construction_type"])
 
     def set_calc_default(self):
         """sets default calculation parameters
