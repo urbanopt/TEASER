@@ -517,7 +517,8 @@ class Project(object):
                            "are valid methods for residential archetype " \
                            "generation"
 
-        assert method in ['tabula_de', 'iwu', 'urbanrenet'], ass_error_method
+        assert method in ['tabula_de', 'iwu',
+                          'urbanrenet', 'tnet'], ass_error_method
 
         ass_error_apart = (
             "The keyword number_of_apartments does not have any "
