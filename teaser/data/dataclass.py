@@ -1,13 +1,10 @@
-# Created July 2015
-# TEASER 4 Development Team
+"""This module holds file paths and bindings for XML data."""
 
-"""This module holds file paths and bindings for XML data
-"""
-
-import warnings
-import xml.etree.ElementTree as et
 import os
 import sys
+import warnings
+import xml.etree.ElementTree as et
+
 import teaser.logic.utilities as utils
 
 v = sys.version_info
@@ -74,6 +71,19 @@ class DataClass(object):
                     'inputdata',
                     'TypeElements_TABULA_DE.xml'))
             self.load_tb_binding()
+        elif self.used_statistic == 'tnet':
+            try:
+                self.path_tb = utils.get_full_path(
+                    os.path.join(
+                        'data',
+                        'input',
+                        'inputdata',
+                        'TypeElements_TNET_CN.xml'))
+                self.load_tb_binding()
+            except:
+                RuntimeError(
+                    "you probably have not copied XML type"
+                    "TypeBuildingElements file")
         elif self.used_statistic is None:
             pass
         self.material_bind = None

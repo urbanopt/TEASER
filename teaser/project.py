@@ -1,23 +1,33 @@
-# created June 2015
-# by TEASER4 Development Team
-
 """This module includes the Project class, which is the API for TEASER.
 """
 
-import warnings
 import os
 import re
-import teaser.logic.utilities as utilities
+import warnings
+
+import teaser.data.input.citygml_input as citygml_in
 import teaser.data.input.teaserxml_input as txml_in
-import teaser.data.output.teaserxml_output as txml_out
 import teaser.data.output.aixlib_output as aixlib_output
+import teaser.data.output.citygml_output as citygml_out
 import teaser.data.output.ibpsa_output as ibpsa_output
+import teaser.data.output.teaserxml_output as txml_out
 import teaser.data.output.text_output as text_out
+import teaser.logic.utilities as utilities
 from teaser.data.dataclass import DataClass
-from teaser.logic.archetypebuildings.bmvbs.office import Office
 from teaser.logic.archetypebuildings.bmvbs.custom.institute import Institute
 from teaser.logic.archetypebuildings.bmvbs.custom.institute4 import Institute4
 from teaser.logic.archetypebuildings.bmvbs.custom.institute8 import Institute8
+from teaser.logic.archetypebuildings.bmvbs.office import Office
+from teaser.logic.archetypebuildings.bmvbs.singlefamilydwelling import \
+    SingleFamilyDwelling
+from teaser.logic.archetypebuildings.tabula.de.apartmentblock import \
+    ApartmentBlock
+from teaser.logic.archetypebuildings.tabula.de.multifamilyhouse import \
+    MultiFamilyHouse
+from teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse import \
+    SingleFamilyHouse
+from teaser.logic.archetypebuildings.tabula.de.terracedhouse import \
+    TerracedHouse
 from teaser.logic.archetypebuildings.urbanrenet.est1a import EST1a
 from teaser.logic.archetypebuildings.urbanrenet.est1b import EST1b
 from teaser.logic.archetypebuildings.urbanrenet.est2 import EST2
@@ -29,19 +39,7 @@ from teaser.logic.archetypebuildings.urbanrenet.est6 import EST6
 from teaser.logic.archetypebuildings.urbanrenet.est7 import EST7
 from teaser.logic.archetypebuildings.urbanrenet.est8a import EST8a
 from teaser.logic.archetypebuildings.urbanrenet.est8b import EST8b
-from teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse import \
-    SingleFamilyHouse
-from teaser.logic.archetypebuildings.tabula.de.terracedhouse import \
-    TerracedHouse
-from teaser.logic.archetypebuildings.tabula.de.multifamilyhouse import \
-    MultiFamilyHouse
-from teaser.logic.archetypebuildings.tabula.de.apartmentblock import \
-    ApartmentBlock
-from teaser.logic.archetypebuildings.bmvbs.singlefamilydwelling import \
-    SingleFamilyDwelling
 from teaser.logic.simulation.modelicainfo import ModelicaInfo
-import teaser.data.output.citygml_output as citygml_out
-import teaser.data.input.citygml_input as citygml_in
 
 
 class Project(object):
@@ -331,7 +329,7 @@ class Project(object):
         ass_error_method = "only 'bmvbs' is a valid method for " \
                            "non-residential archetype generation"
 
-        assert method in ['bmvbs'], ass_error_method
+        assert method in ['bmvbs', 'tnet'], ass_error_method
 
         ass_error_usage = "only 'office', 'institute', 'institute4', " \
                           "'institute8' are valid usages for archetype " \
@@ -340,10 +338,11 @@ class Project(object):
         assert usage in ['office', 'institute', 'institute4',
                          'institute8'], ass_error_usage
 
-        if self.data is None:
-            self.data = DataClass(used_statistic='iwu')
-        elif self.data.used_statistic != 'iwu':
-            self.data = DataClass(used_statistic='iwu')
+        # if self.data is None:
+        #     self.data = DataClass(used_statistic='iwu')
+        # elif self.data.used_statistic != 'iwu':
+        #     self.data = DataClass(used_statistic='iwu')
+        self.data = DataClass(used_statistic=method)
 
         if usage == 'office':
 
@@ -525,10 +524,11 @@ class Project(object):
             "effect on archetype generation for 'iwu' or"
             "'tabula_de', see docs for more information")
 
-        if method in ['iwu', 'tabula_de'] and number_of_apartments is not None:
+        if method in ['iwu', 'tabula_de', 'tnet'] and \
+                number_of_apartments is not None:
             warnings.warn(ass_error_apart)
 
-        if method == 'tabula_de':
+        if method in ['tabula_de', 'tnet']:
 
             if self.data is None:
                 self.data = DataClass(used_statistic=method)

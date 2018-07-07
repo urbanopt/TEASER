@@ -2,16 +2,16 @@
 # by TEASER4 Development Team
 
 
-import math
 import collections
-from teaser.logic.archetypebuildings.nonresidential \
-    import NonResidential
-from teaser.logic.buildingobjects.boundaryconditions.boundaryconditions \
-    import BoundaryConditions as UseCond
+import math
+
+from teaser.logic.archetypebuildings.nonresidential import NonResidential
+from teaser.logic.buildingobjects.boundaryconditions.boundaryconditions import \
+    BoundaryConditions as UseCond
 from teaser.logic.buildingobjects.buildingphysics.ceiling import Ceiling
 from teaser.logic.buildingobjects.buildingphysics.floor import Floor
-from teaser.logic.buildingobjects.buildingphysics.groundfloor \
-    import GroundFloor
+from teaser.logic.buildingobjects.buildingphysics.groundfloor import \
+    GroundFloor
 from teaser.logic.buildingobjects.buildingphysics.innerwall import InnerWall
 from teaser.logic.buildingobjects.buildingphysics.outerwall import OuterWall
 from teaser.logic.buildingobjects.buildingphysics.rooftop import Rooftop
@@ -598,9 +598,9 @@ class Office(NonResidential):
     @construction_type.setter
     def construction_type(self, value):
         if value is not None:
-            if value == "heavy" or value == "light":
-                self._construction_type = value
-            else:
-                raise ValueError("Construction_type has to be light or heavy")
+            # if value == "heavy" or value == "light":
+            self._construction_type = value
+            # else:
+            #     raise ValueError("Construction_type has to be light or heavy")
         else:
             self._construction_type = "heavy"
