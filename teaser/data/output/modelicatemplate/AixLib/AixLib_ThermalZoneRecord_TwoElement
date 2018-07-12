@@ -73,12 +73,12 @@ record ${zone.parent.name}_${zone.name} "${zone.parent.name}_${zone.name}"
     maxAHU = ${zone.use_conditions.max_ahu},
     hHeat = ${zone.model_attr.heat_load},
     lHeat = 0,
-    KRHeat = 100,
-    TNHeat = 50,
+    KRHeat = 1000,
+    TNHeat = 1,
     HeaterOn = true,
     hCool = 0,
     lCool = ${zone.model_attr.cool_load},
-    KRCool = 100,
-    TNCool = 50,
+    KRCool = 1000,
+    TNCool = 1,
     CoolerOn = true);
 end ${zone.parent.name}_${zone.name};
