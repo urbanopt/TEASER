@@ -1,33 +1,22 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>TEASER API - Project class &mdash; TEASER 0.5.1 documentation</title>
-    
+    <title>TEASER API - Project class &#8212; TEASER 0.6.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.5.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="TEASER 0.5.1 documentation" href="index.html" />
-    <link rel="next" title="Archetype Buildings" href="archetypes.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Install TEASER" href="install_teaser.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
 <div class="headerStyle">
 <img src="_static/EBC_Logo.png" alt="EBC_Logo" />
 </div>
@@ -42,12 +31,9 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="archetypes.html" title="Archetype Buildings"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
           <a href="install_teaser.html" title="Install TEASER"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.1 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.6.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -55,27 +41,23 @@
   <h4>Previous topic</h4>
   <p class="topless"><a href="install_teaser.html"
                         title="previous chapter">Install TEASER</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="archetypes.html"
-                        title="next chapter">Archetype Buildings</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/teaser.Project.txt"
+      <li><a href="_sources/teaser.Project.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -88,12 +70,11 @@
             
   <div class="section" id="teaser-api-project-class">
 <h1>TEASER API - Project class<a class="headerlink" href="#teaser-api-project-class" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-teaser.project"></span><p>This module includes the Project class, which serves as an API for a
-TEASER Project</p>
+<span class="target" id="module-teaser.project"></span><p>This module includes the Project class, which is the API for TEASER.</p>
 <dl class="class">
 <dt id="teaser.project.Project">
-<em class="property">class </em><code class="descclassname">teaser.project.</code><code class="descname">Project</code><span class="sig-paren">(</span><em>load_data=True</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.project.Project" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="descclassname">teaser.project.</code><code class="descname">Project</code><span class="sig-paren">(</span><em>load_data=False</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.project.Project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Top class for TEASER projects it serves as an API</p>
 <p>The Project class is the top class for all TEASER projects and serves as an
 API for script based interface. It is highly recommended to always
@@ -104,60 +85,137 @@ save information for later use.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>load_data</strong> : boolean</p>
-<blockquote class="last">
-<div><p>boolean if data bases for materials, type elements and use conditions
-should be loaded (default = True)</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>load_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd><p class="first last">boolean if data bases for materials, type elements and use conditions
+should be loaded. default = False but will be automatically loaded
+once you add a archetype building. For building generation from
+scratch, set to True</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Name of the Project (default is ‘Project’)</p>
+</dd>
+<dt><strong>modelica_info</strong> <span class="classifier-delimiter">:</span> <span class="classifier">instance of ModelicaInfo</span></dt>
+<dd><p class="first last">TEASER instance of ModelicaInfo to store Modelica related
+information, like used compiler, runtime, etc.</p>
+</dd>
+<dt><strong>buildings</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">List of all buildings in one project, instances of Building()</p>
+</dd>
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">instance of DataClass</span></dt>
+<dd><p class="first last">TEASER instance of DataClass containing XML binding classes</p>
+</dd>
+<dt><strong>weather_file_path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Absolute path to weather file used for Modelica simulation. Default
+weather file can be find in inputdata/weatherdata.</p>
+</dd>
+<dt><strong>number_of_elements_calc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Defines the number of elements, that are aggregated (1, 2, 3 or 4),
+default is 2</p>
+</dd>
+<dt><strong>merge_windows_calc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True for merging the windows into the outer walls, False for
+separate resistance for window, default is False (only supported for
+IBPSA)</p>
+</dd>
+<dt><strong>used_library_calc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">used library (AixLib and IBPSA are supported)</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
 <colgroup>
-<col width="14%" />
-<col width="86%" />
+<col width="10%" />
+<col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>name</td>
-<td>(str) Name of the Project (default is &#8216;Project&#8217;)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#teaser.project.Project.add_non_residential" title="teaser.project.Project.add_non_residential"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_non_residential</span></code></a>(method,&nbsp;usage,&nbsp;name,&nbsp;…)</td>
+<td>Add a non-residential building to the TEASER project.</td>
 </tr>
-<tr class="row-even"><td>modelica_info</td>
-<td>(instance of ModelicaInfo) TEASER instance of ModelicaInfo to store Modelica related information, like used compiler, runtime, etc.</td>
+<tr class="row-even"><td><a class="reference internal" href="#teaser.project.Project.add_residential" title="teaser.project.Project.add_residential"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_residential</span></code></a>(method,&nbsp;usage,&nbsp;name,&nbsp;…[,&nbsp;…])</td>
+<td>Add a residential building to the TEASER project.</td>
 </tr>
-<tr class="row-odd"><td>buildings</td>
-<td>(list) List of all buildings in one project, instances of Building()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#teaser.project.Project.calc_all_buildings" title="teaser.project.Project.calc_all_buildings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_all_buildings</span></code></a>([raise_errors])</td>
+<td>Calculates values for all project buildings</td>
 </tr>
-<tr class="row-even"><td>data</td>
-<td>(instance of DataClass) TEASER instance of DataClass containing XML binding classes</td>
+<tr class="row-even"><td><a class="reference internal" href="#teaser.project.Project.export_aixlib" title="teaser.project.Project.export_aixlib"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export_aixlib</span></code></a>([building_model,&nbsp;zone_model,&nbsp;…])</td>
+<td>Exports values to a record file for Modelica simulation</td>
 </tr>
-<tr class="row-odd"><td>weather_file_path</td>
-<td>(str) Absolute path to weather file used for Modelica simulation. Default weather file can be find in inputdata/weatherdata.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#teaser.project.Project.export_ibpsa" title="teaser.project.Project.export_ibpsa"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export_ibpsa</span></code></a>([library,&nbsp;internal_id,&nbsp;path])</td>
+<td>Exports values to a record file for Modelica simulation</td>
 </tr>
-<tr class="row-even"><td>number_of_elements_calc</td>
-<td>(int) Defines the number of elements, that are aggregated (1, 2, 3 or 4), default is 2</td>
+<tr class="row-even"><td><a class="reference internal" href="#teaser.project.Project.export_parameters_txt" title="teaser.project.Project.export_parameters_txt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export_parameters_txt</span></code></a>([path])</td>
+<td>Exports parameters of all buildings in a readable text file</td>
 </tr>
-<tr class="row-odd"><td>merge_windows_calc</td>
-<td>(bool) True for merging the windows into the outer walls, False for separate resistance for window, default is False (only supported for IBPSA)</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">instantiate_data_class</span></code>()</td>
+<td>Initialization of DataClass</td>
 </tr>
-<tr class="row-even"><td>used_library_calc</td>
-<td>(str) used library (AixLib and IBPSA are supported)</td>
+<tr class="row-even"><td><a class="reference internal" href="#teaser.project.Project.load_citygml" title="teaser.project.Project.load_citygml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_citygml</span></code></a>([path])</td>
+<td>Loads buildings from a citygml file</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#teaser.project.Project.load_project" title="teaser.project.Project.load_project"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_project</span></code></a>(path)</td>
+<td>Loads the project from a teaserXML file (new format)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#teaser.project.Project.retrofit_all_buildings" title="teaser.project.Project.retrofit_all_buildings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">retrofit_all_buildings</span></code></a>([year_of_retrofit,&nbsp;…])</td>
+<td>Retrofits all buildings in the project.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#teaser.project.Project.save_citygml" title="teaser.project.Project.save_citygml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_citygml</span></code></a>([file_name,&nbsp;path])</td>
+<td>Saves the project to a CityGML file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#teaser.project.Project.save_project" title="teaser.project.Project.save_project"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_project</span></code></a>([file_name,&nbsp;path])</td>
+<td>Saves the project to a tXML file</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#teaser.project.Project.set_default" title="teaser.project.Project.set_default"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_default</span></code></a>([load_data])</td>
+<td>Sets all attributes to default</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">type_bldg_est1a</span></code>(name,&nbsp;year_of_construction,&nbsp;…)</td>
+<td>Old function, consider rewriting your code</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">type_bldg_est1b</span></code>(name,&nbsp;year_of_construction,&nbsp;…)</td>
+<td>Old function, consider rewriting your code</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">type_bldg_est4b</span></code>(name,&nbsp;year_of_construction,&nbsp;…)</td>
+<td>Old function, consider rewriting your code</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">type_bldg_est7</span></code>(name,&nbsp;year_of_construction,&nbsp;…)</td>
+<td>Old function, consider rewriting your code</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">type_bldg_institute</span></code>(name,&nbsp;…[,&nbsp;with_ahu,&nbsp;…])</td>
+<td>Old function, consider rewriting your code</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">type_bldg_institute4</span></code>(name,&nbsp;…[,&nbsp;with_ahu,&nbsp;…])</td>
+<td>Old function, consider rewriting your code</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">type_bldg_institute8</span></code>(name,&nbsp;…[,&nbsp;with_ahu,&nbsp;…])</td>
+<td>Old function, consider rewriting your code</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">type_bldg_office</span></code>(name,&nbsp;year_of_construction,&nbsp;…)</td>
+<td>Old function, consider rewriting your code</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">type_bldg_residential</span></code>(name,&nbsp;…[,&nbsp;with_ahu,&nbsp;…])</td>
+<td>Old function, consider rewriting your code</td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
 <dl class="method">
 <dt id="teaser.project.Project.add_non_residential">
 <code class="descname">add_non_residential</code><span class="sig-paren">(</span><em>method</em>, <em>usage</em>, <em>name</em>, <em>year_of_construction</em>, <em>number_of_floors</em>, <em>height_of_floors</em>, <em>net_leased_area</em>, <em>with_ahu=True</em>, <em>office_layout=None</em>, <em>window_layout=None</em>, <em>construction_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.project.Project.add_non_residential" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds a non-residential building to the TEASER project</p>
+<dd><p>Add a non-residential building to the TEASER project.</p>
 <p>This function adds a non-residential archetype building to the TEASER
 project. You need to specify the method of the archetype generation.
 Currently TEASER supports only method according to Lichtmess and BMVBS
 for non-residential buildings. Further the type of usage needs to be
 specified. Currently TEASER supports four different types of
-non-residential buildings (&#8216;office&#8217;, &#8216;institute&#8217;, &#8216;institute4&#8217;,
-&#8216;institute8&#8217;). For more information on specific archetype buildings and
+non-residential buildings (‘office’, ‘institute’, ‘institute4’,
+‘institute8’). For more information on specific archetype buildings and
 methods, please read the docs of archetype classes.</p>
 <p>This function also calculates the parameters of the buildings directly
 with the settings set in the project (e.g. used_library_calc or
@@ -166,76 +224,70 @@ number_of_elements_calc).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>method</strong> : str</p>
-<blockquote>
-<div><p>Used archetype method, currenlty only &#8216;bmvbs&#8217; is supported</p>
-</div></blockquote>
-<p><strong>usage</strong> : str</p>
-<blockquote>
-<div><p>Main usage of the obtained building, currently only &#8216;office&#8217;,
-&#8216;institute&#8217;, &#8216;institute4&#8217;, institute8&#8217; are supported</p>
-</div></blockquote>
-<p><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Individual name</p>
-</div></blockquote>
-<p><strong>year_of_construction</strong> : int</p>
-<blockquote>
-<div><p>Year of first construction</p>
-</div></blockquote>
-<p><strong>height_of_floors</strong> : float [m]</p>
-<blockquote>
-<div><p>Average height of the buildings&#8217; floors</p>
-</div></blockquote>
-<p><strong>number_of_floors</strong> : int</p>
-<blockquote>
-<div><p>Number of building&#8217;s floors above ground</p>
-</div></blockquote>
-<p><strong>net_leased_area</strong> : float [m2]</p>
-<blockquote>
-<div><p>Total net leased area of building. This is area is NOT the
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>method</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Used archetype method, currently only ‘bmvbs’ is supported</p>
+</dd>
+<dt><strong>usage</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Main usage of the obtained building, currently only ‘office’,
+‘institute’, ‘institute4’, institute8’ are supported</p>
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Individual name</p>
+</dd>
+<dt><strong>year_of_construction</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Year of first construction</p>
+</dd>
+<dt><strong>height_of_floors</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float [m]</span></dt>
+<dd><p class="first last">Average height of the buildings’ floors</p>
+</dd>
+<dt><strong>number_of_floors</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of building’s floors above ground</p>
+</dd>
+<dt><strong>net_leased_area</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float [m2]</span></dt>
+<dd><p class="first last">Total net leased area of building. This is area is NOT the
 footprint
 of a building</p>
-</div></blockquote>
-<p><strong>with_ahu</strong> : Boolean</p>
-<blockquote>
-<div><p>If set to True, an empty instance of BuildingAHU is instantiated
+</dd>
+<dt><strong>with_ahu</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Boolean</span></dt>
+<dd><p class="first last">If set to True, an empty instance of BuildingAHU is instantiated
 and
 assigned to attribute central_ahu. This instance holds information
 for central Air Handling units. Default is False.</p>
-</div></blockquote>
-<p><strong>office_layout</strong> : int</p>
-<blockquote>
-<div><p>Structure of the floor plan of office buildings, default is 1,
+</dd>
+<dt><strong>office_layout</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">Structure of the floor plan of office buildings, default is 1,
 which is representative for one elongated floor.</p>
-<blockquote>
+<blockquote class="last">
 <div><p>1: elongated 1 floor
 2: elongated 2 floors
 3: compact (e.g. for a square base building)</p>
 </div></blockquote>
-</div></blockquote>
-<p><strong>window_layout</strong> : int</p>
-<blockquote>
-<div><p>Structure of the window facade type, default is 1, which is
+</dd>
+<dt><strong>window_layout</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">Structure of the window facade type, default is 1, which is
 representative for a punctuated facade.</p>
-<blockquote>
+<blockquote class="last">
 <div><p>1: punctuated facade (individual windows)
 2: banner facade (continuous windows)
 3: full glazing</p>
 </div></blockquote>
-</div></blockquote>
-<p><strong>construction_type</strong> : str</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>Construction type of used wall constructions default is &#8220;heavy&#8221;)</dt>
+</dd>
+<dt><strong>construction_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><dl class="first last docutils">
+<dt>Construction type of used wall constructions default is “heavy”)</dt>
 <dd><p class="first last">heavy: heavy construction
 light: light construction</p>
 </dd>
 </dl>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>type_bldg</strong> : Instance of Office()</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>type_bldg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Instance of Office()</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -245,136 +297,126 @@ light: light construction</p>
 <dl class="method">
 <dt id="teaser.project.Project.add_residential">
 <code class="descname">add_residential</code><span class="sig-paren">(</span><em>method</em>, <em>usage</em>, <em>name</em>, <em>year_of_construction</em>, <em>number_of_floors</em>, <em>height_of_floors</em>, <em>net_leased_area</em>, <em>with_ahu=False</em>, <em>residential_layout=None</em>, <em>neighbour_buildings=None</em>, <em>attic=None</em>, <em>cellar=None</em>, <em>dormer=None</em>, <em>construction_type=None</em>, <em>number_of_apartments=None</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.project.Project.add_residential" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds a residential building to the TEASER project</p>
+<dd><p>Add a residential building to the TEASER project.</p>
 <p>This function adds a residential archetype building to the TEASER
 project. You need to specify the method of the archetype generation.
-Currently TEASER supports only method according &#8216;iwu&#8217; and &#8216;urbanrenet&#8217;
-for residential buildings (&#8216;tabula_de&#8217; to follow soon). Further the
+Currently TEASER supports only method according ‘iwu’ and ‘urbanrenet’
+for residential buildings (‘tabula_de’ to follow soon). Further the
 type
 of usage needs to be specified. Currently TEASER supports one type of
-residential building for &#8216;iwu&#8217; and eleven types for &#8216;urbanrenet&#8217;. For
+residential building for ‘iwu’ and eleven types for ‘urbanrenet’. For
 more information on specific archetype buildings and methods, please
-read the docs of archetype classes.</p>
-<p>This function also calculates the parameters of the buildings directly
+read the docs of archetype classes.
+This function also calculates the parameters of the buildings directly
 with the settings set in the project (e.g. used_library_calc or
 number_of_elements_calc).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>method</strong> : str</p>
-<blockquote>
-<div><p>Used archetype method, currenlty only &#8216;iwu&#8217; or &#8216;urbanrenet&#8217; are
-supported, &#8216;tabula_de&#8217; to follow soon</p>
-</div></blockquote>
-<p><strong>usage</strong> : str</p>
-<blockquote>
-<div><p>Main usage of the obtainend building, currently only
-&#8216;single_family_dwelling&#8217; is supported for iwu and &#8216;est1a&#8217;, &#8216;est1b&#8217;,
-&#8216;est2&#8217;, &#8216;est3&#8217;, &#8216;est4a&#8217;, &#8216;est4b&#8217;, &#8216;est5&#8217; &#8216;est6&#8217;, &#8216;est7&#8217;, &#8216;est8a&#8217;,
-&#8216;est8b&#8217; for urbanrenet.</p>
-</div></blockquote>
-<p><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Individual name</p>
-</div></blockquote>
-<p><strong>year_of_construction</strong> : int</p>
-<blockquote>
-<div><p>Year of first construction</p>
-</div></blockquote>
-<p><strong>height_of_floors</strong> : float [m]</p>
-<blockquote>
-<div><p>Average height of the buildings&#8217; floors</p>
-</div></blockquote>
-<p><strong>number_of_floors</strong> : int</p>
-<blockquote>
-<div><p>Number of building&#8217;s floors above ground</p>
-</div></blockquote>
-<p><strong>net_leased_area</strong> : float [m2]</p>
-<blockquote>
-<div><p>Total net leased area of building. This is area is NOT the
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>method</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Used archetype method, currently only ‘iwu’ or ‘urbanrenet’ are
+supported, ‘tabula_de’ to follow soon</p>
+</dd>
+<dt><strong>usage</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Main usage of the obtained building, currently only
+‘single_family_dwelling’ is supported for iwu and ‘est1a’, ‘est1b’,
+‘est2’, ‘est3’, ‘est4a’, ‘est4b’, ‘est5’ ‘est6’, ‘est7’, ‘est8a’,
+‘est8b’ for urbanrenet.</p>
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Individual name</p>
+</dd>
+<dt><strong>year_of_construction</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Year of first construction</p>
+</dd>
+<dt><strong>height_of_floors</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float [m]</span></dt>
+<dd><p class="first last">Average height of the buildings’ floors</p>
+</dd>
+<dt><strong>number_of_floors</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of building’s floors above ground</p>
+</dd>
+<dt><strong>net_leased_area</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float [m2]</span></dt>
+<dd><p class="first last">Total net leased area of building. This is area is NOT the
 footprint
 of a building</p>
-</div></blockquote>
-<p><strong>with_ahu</strong> : Boolean</p>
-<blockquote>
-<div><p>If set to True, an empty instance of BuildingAHU is instantiated
+</dd>
+<dt><strong>with_ahu</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Boolean</span></dt>
+<dd><p class="first last">If set to True, an empty instance of BuildingAHU is instantiated
 and
 assigned to attribute central_ahu. This instance holds information
 for central Air Handling units. Default is False.</p>
-</div></blockquote>
-<p><strong>residential_layout</strong> : int</p>
-<blockquote>
-<div><dl class="docutils">
+</dd>
+<dt><strong>residential_layout</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><dl class="first last docutils">
 <dt>Structure of floor plan (default = 0) CAUTION only used for iwu</dt>
 <dd><p class="first last">0: compact
 1: elongated/complex</p>
 </dd>
 </dl>
-</div></blockquote>
-<p><strong>neighbour_buildings</strong> : int</p>
-<blockquote>
-<div><p>Number of neighbour buildings. CAUTION: this will not change
+</dd>
+<dt><strong>neighbour_buildings</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">Number of neighbour buildings. CAUTION: this will not change
 the orientation of the buildings wall, but just the overall
 exterior wall and window area(!) (default = 0)</p>
-<blockquote>
+<blockquote class="last">
 <div><p>0: no neighbour
 1: one neighbour
 2: two neighbours</p>
 </div></blockquote>
-</div></blockquote>
-<p><strong>attic</strong> : int</p>
-<blockquote>
-<div><p>Design of the attic. CAUTION: this will not change the orientation
+</dd>
+<dt><strong>attic</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">Design of the attic. CAUTION: this will not change the orientation
 or tilt of the roof instances, but just adapt the roof area(!) (
 default = 0) CAUTION only used for iwu</p>
-<blockquote>
+<blockquote class="last">
 <div><p>0: flat roof
 1: non heated attic
 2: partly heated attic
 3: heated attic</p>
 </div></blockquote>
-</div></blockquote>
-<p><strong>cellar</strong> : int</p>
-<blockquote>
-<div><p>Design of the of cellar CAUTION: this will not change the
+</dd>
+<dt><strong>cellar</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first">Design of the of cellar CAUTION: this will not change the
 orientation, tilt of GroundFloor instances, nor the number or area
 of ThermalZones, but will change GroundFloor area(!) (default = 0)
 CAUTION only used for iwu</p>
-<blockquote>
+<blockquote class="last">
 <div><p>0: no cellar
 1: non heated cellar
 2: partly heated cellar
 3: heated cellar</p>
 </div></blockquote>
-</div></blockquote>
-<p><strong>dormer</strong> : str</p>
-<blockquote>
-<div><p>Is a dormer attached to the roof? CAUTION: this will not
+</dd>
+<dt><strong>dormer</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first">Is a dormer attached to the roof? CAUTION: this will not
 change roof or window orientation or tilt, but just adapt the roof
 area(!) (default = 0) CAUTION only used for iwu</p>
-<blockquote>
+<blockquote class="last">
 <div><p>0: no dormer
 1: dormer</p>
 </div></blockquote>
-</div></blockquote>
-<p><strong>construction_type</strong> : str</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>Construction type of used wall constructions default is &#8220;heavy&#8221;)</dt>
+</dd>
+<dt><strong>construction_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><dl class="first last docutils">
+<dt>Construction type of used wall constructions default is “heavy”)</dt>
 <dd><p class="first last">heavy: heavy construction
 light: light construction</p>
 </dd>
 </dl>
-</div></blockquote>
-<p><strong>number_of_apartments</strong> : int</p>
-<blockquote>
-<div><p>number of apartments inside Building (default = 1). CAUTION only
+</dd>
+<dt><strong>number_of_apartments</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">number of apartments inside Building (default = 1). CAUTION only
 used for urbanrenet</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>type_bldg</strong> : Instance of SingleFamilyDwelling()</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>type_bldg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Instance of Archetype Building</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -416,16 +458,16 @@ the old options please contact us.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>internal_id</strong> : float</p>
-<blockquote>
-<div><p>setter of a specific building which will be exported, if None then
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>internal_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">setter of a specific building which will be exported, if None then
 all buildings will be exported</p>
-</div></blockquote>
-<p><strong>path</strong> : string</p>
-<blockquote class="last">
-<div><p>if the Files should not be stored in default output path of TEASER,
+</dd>
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">if the Files should not be stored in default output path of TEASER,
 an alternative path can be specified as a full path</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -441,24 +483,23 @@ an alternative path can be specified as a full path</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>library</strong> : str</p>
-<blockquote>
-<div><p>Used library within the framework of IBPSA library. The
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>library</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Used library within the framework of IBPSA library. The
 models are identical in each library, but IBPSA Modelica library is
 just a core set of models and should not be used standalone.
-Valid values are &#8216;AixLib&#8217; (default), &#8216;Buildings&#8217;,
-&#8216;BuildingSystems&#8217; and &#8216;IDEAS&#8217;.</p>
-</div></blockquote>
-<p><strong>internal_id</strong> : float</p>
-<blockquote>
-<div><p>setter of a specific building which will be exported, if None then
+Valid values are ‘AixLib’ (default), ‘Buildings’,
+‘BuildingSystems’ and ‘IDEAS’.</p>
+</dd>
+<dt><strong>internal_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">setter of a specific building which will be exported, if None then
 all buildings will be exported</p>
-</div></blockquote>
-<p><strong>path</strong> : string</p>
-<blockquote class="last">
-<div><p>if the Files should not be stored in default output path of TEASER,
+</dd>
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">if the Files should not be stored in default output path of TEASER,
 an alternative path can be specified as a full path</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -473,11 +514,12 @@ an alternative path can be specified as a full path</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>path</strong> : string</p>
-<blockquote class="last">
-<div><p>if the Files should not be stored in OutputData, an alternative
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">if the Files should not be stored in OutputData, an alternative
 can be specified</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -500,10 +542,11 @@ may use the _convert_bldg function in citygml_input module.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>path</strong> : string</p>
-<blockquote class="last">
-<div><p>full path to a CityGML file</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">full path to a CityGML file</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -519,10 +562,11 @@ may use the _convert_bldg function in citygml_input module.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>path</strong> : string</p>
-<blockquote class="last">
-<div><p>full path to a teaserXML file</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">full path to a teaserXML file</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -531,9 +575,16 @@ may use the _convert_bldg function in citygml_input module.</p>
 
 <dl class="method">
 <dt id="teaser.project.Project.retrofit_all_buildings">
-<code class="descname">retrofit_all_buildings</code><span class="sig-paren">(</span><em>year_of_retrofit</em>, <em>window_type=None</em>, <em>material=None</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.project.Project.retrofit_all_buildings" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrofits all buildings in the project</p>
-<p>All Buildings in the project are retrofitted in the following manner:</p>
+<code class="descname">retrofit_all_buildings</code><span class="sig-paren">(</span><em>year_of_retrofit=None</em>, <em>type_of_retrofit=None</em>, <em>window_type=None</em>, <em>material=None</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.project.Project.retrofit_all_buildings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrofits all buildings in the project.</p>
+<p>Depending on the used Archetype approach this function will retrofit
+the building. If you have archetypes of both typologies (tabula and
+iwu/BMBVS) you need to pass all keywords (see also Parameters section).</p>
+<p>If TABULA approach is used, it will replace the current construction
+with the construction specified in ‘type_of_retrofit’,
+where ‘retrofit’ and ‘adv_retrofit’ are allowed.</p>
+<p>‘iwu’ or ‘BMVBS’ Buildings in the project are retrofitted in the
+following manner:</p>
 <ul class="simple">
 <li>replace all windows of the building to retrofitted window according
 to the year of retrofit.</li>
@@ -552,18 +603,22 @@ and inner heat transfer are used.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>year_of_retrofit</strong> : int</p>
-<blockquote>
-<div><p>the year the buildings are retrofitted</p>
-</div></blockquote>
-<p><strong>window_type</strong> : str</p>
-<blockquote>
-<div><p>Default: EnEv 2014</p>
-</div></blockquote>
-<p><strong>material</strong> : str</p>
-<blockquote class="last">
-<div><p>Default: EPS035</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>year_of_retrofit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">the year the buildings are retrofitted, only ‘iwu’/’bmbvs’
+archetype approach.</p>
+</dd>
+<dt><strong>type_of_retrofit</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The classification of retrofit, if the archetype building
+approach of TABULA is used.</p>
+</dd>
+<dt><strong>window_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Default: EnEv 2014, only ‘iwu’/’bmbvs’ archetype approach.</p>
+</dd>
+<dt><strong>material</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Default: EPS035, only ‘iwu’/’bmbvs’ archetype approach.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -580,15 +635,15 @@ and EnergyADE to store semantic information</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>file_name</strong> : string</p>
-<blockquote>
-<div><p>name of the new file</p>
-</div></blockquote>
-<p><strong>path</strong> : string</p>
-<blockquote class="last">
-<div><p>if the Files should not be stored in OutputData, an alternative
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>file_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the new file</p>
+</dd>
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">if the Files should not be stored in OutputData, an alternative
 can be specified</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -604,15 +659,15 @@ can be specified</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>file_name</strong> : string</p>
-<blockquote>
-<div><p>name of the new file</p>
-</div></blockquote>
-<p><strong>path</strong> : string</p>
-<blockquote class="last">
-<div><p>if the Files should not be stored in OutputData, an alternative
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>file_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the new file</p>
+</dd>
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">if the Files should not be stored in OutputData, an alternative
 can be specified</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -628,12 +683,13 @@ can be specified</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>load_data</strong> : boolean, None-type</p>
-<blockquote class="last">
-<div><p>boolean if data bindings for type elements and use conditions
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>load_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean, None-type</span></dt>
+<dd><p class="first last">boolean if data bindings for type elements and use conditions
 should be loaded (default = True), in addition it could be a None-
 type to use the already used data bindings</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -660,17 +716,14 @@ type to use the already used data bindings</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="archetypes.html" title="Archetype Buildings"
-             >next</a> |</li>
-        <li class="right" >
           <a href="install_teaser.html" title="Install TEASER"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.1 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.6.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2016-2017, RWTH Aachen University, E.ON Energy Research Center, Institute for Energy Efficienct Buildings and Indoor Climate.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2016-2017, RWTH Aachen University, E.ON Energy Research Center, Institute for Energy Efficienct Buildings and Indoor Climate.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>

@@ -1,33 +1,22 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Archetype Buildings &mdash; TEASER 0.5.1 documentation</title>
-    
+    <title>Archetype Buildings &#8212; TEASER 0.6.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.5.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="TEASER 0.5.1 documentation" href="index.html" />
-    <link rel="next" title="Examples" href="teaser.Examples.html" />
-    <link rel="prev" title="TEASER API - Project class" href="teaser.Project.html" /> 
-  </head>
-  <body role="document">
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="teaser.Examples.html" /> 
+  </head><body>
 <div class="headerStyle">
 <img src="_static/EBC_Logo.png" alt="EBC_Logo" />
 </div>
@@ -44,10 +33,7 @@
         <li class="right" >
           <a href="teaser.Examples.html" title="Examples"
              accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="teaser.Project.html" title="TEASER API - Project class"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.1 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.6.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -61,36 +47,38 @@
 <li><a class="reference internal" href="#institute4-module">Institute4 module</a></li>
 <li><a class="reference internal" href="#institute8-module">Institute8 module</a></li>
 <li><a class="reference internal" href="#residential">Residential</a></li>
+<li><a class="reference internal" href="#iwu">IWU</a></li>
 <li><a class="reference internal" href="#singlefamilydwelling">SingleFamilyDwelling</a></li>
+<li><a class="reference internal" href="#tabula">Tabula</a></li>
+<li><a class="reference internal" href="#singlefamilyhouse">singlefamilyhouse</a></li>
+<li><a class="reference internal" href="#apartmentblock">apartmentblock</a></li>
+<li><a class="reference internal" href="#multifamilyhouse">multifamilyhouse</a></li>
+<li><a class="reference internal" href="#terracedhouse">terracedhouse</a></li>
 <li><a class="reference internal" href="#literature">Literature</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="teaser.Project.html"
-                        title="previous chapter">TEASER API - Project class</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="teaser.Examples.html"
                         title="next chapter">Examples</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/archetypes.txt"
+      <li><a href="_sources/archetypes.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -134,7 +122,7 @@ up datasets for buildings out of limited building information. For this, the
 methods are based on the following principles according to Lichtmess
 <a class="reference internal" href="#lichtme-2010" id="id4">[2]</a>:</p>
 <ol class="arabic simple">
-<li>The building envelope is a function based on the building&#8217;s net leased area</li>
+<li>The building envelope is a function based on the building’s net leased area</li>
 <li>The building envelope can automatically be assigned to the thermal zones</li>
 </ol>
 <p>These principles are mainly used to handle the building envelopes.
@@ -238,6 +226,9 @@ net leased area is divided in the following thermal zone areas:</p>
 <div class="section" id="residential">
 <h2>Residential<a class="headerlink" href="#residential" title="Permalink to this headline">¶</a></h2>
 </div>
+<div class="section" id="iwu">
+<h2>IWU<a class="headerlink" href="#iwu" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="singlefamilydwelling">
 <h2>SingleFamilyDwelling<a class="headerlink" href="#singlefamilydwelling" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -249,6 +240,56 @@ area:</p>
 <li>Living (100% of net leased area)</li>
 </ol>
 </div></blockquote>
+</div>
+<div class="section" id="tabula">
+<h2>Tabula<a class="headerlink" href="#tabula" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>This is an archetype building for german single family house according to
+TABULA building typology (<a class="reference external" href="http://webtool.building-typology.eu/#bm">http://webtool.building-typology.eu/#bm</a>). As
+TABULA defines one reference building, whereas TEASER wants to provide a
+methodology to generate individual building information, this archetype
+underlies some assumptions. The made assumptions are explained in the
+following:</p>
+<p>Each building has four orientations for outer walls and windows (north,
+east, south and west), two orientations for rooftops (south and north), with
+tilt of 35 degree and one orientation for ground floors and one door (
+default
+orientation is west). The area of each surface is calculated using the
+product of the given net_leased_area and specific estimation factors. These
+estimation factors where build by dividing the given ‘surface area’ by the
+‘reference floor area’ in TABULA. The estimation factors are calculated for
+each building period (‘construction year class’). Please note that the
+number and height of the floors given in TEASER does not have any effect on
+the surface area for heat transmission, but is only used to calculate the
+interior wall area, which is not specified in TABULA at all. Further, TABULA
+does not specify any specific user profile, by default the SingleFamilyHouse
+class has exactly one usage zone, which is ‘Living’. TABULA also does not
+always specify the exact construction of building elements, but always
+provides a prescribed U-Value. We used the U-Value and the given material
+information to determine thickness of each layer and implemented it into
+elements XML (‘teaser.data.input.inputdata.TypeElements_TABULA_DE.xml’). The
+material properties have been taken from MASEA Material data base
+(<a class="reference external" href="http://www.masea-ensan.de/">http://www.masea-ensan.de/</a>). As there might be some differences in the
+assumptions for material properties from TABULA and MASEA the U-Value might
+not always be exactly the same as in TABULA but is always in an acceptable
+range. The U-Value has been calculated using combined constant values for
+interior and exterior heat transmission, we used a resistance of 0.17
+(m2*K)/W for outer walls, windows, flat roofs and doors; 0.34 (m2*K)/W  for
+ground floors to unheated cellars and 0.17 (m2*K)/W  to direct ground
+coupled floors, 0.21 (m2*K)/W  was taken for pitched roofs.</p>
+</div></blockquote>
+</div>
+<div class="section" id="singlefamilyhouse">
+<h2>singlefamilyhouse<a class="headerlink" href="#singlefamilyhouse" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="apartmentblock">
+<h2>apartmentblock<a class="headerlink" href="#apartmentblock" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="multifamilyhouse">
+<h2>multifamilyhouse<a class="headerlink" href="#multifamilyhouse" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="terracedhouse">
+<h2>terracedhouse<a class="headerlink" href="#terracedhouse" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="literature">
 <h2>Literature<a class="headerlink" href="#literature" title="Permalink to this headline">¶</a></h2>
@@ -268,13 +309,13 @@ area:</p>
 <table class="docutils citation" frame="void" id="kurzverfahreniwu" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[3]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id17">2</a>)</em> Tobias Loga, Nikolaus Diefenbach, Jens Knissel, and Rolf Born. <em>Ein vereinfachtes, statistisch abgesichertes Verfahren zur Erhebung von Gebäudedaten für die energetische Bewertung von Gebäuden</em>. volume Bauforschung für die Praxis. Institut Wohnen und Umwelt GmbH, Darmstadt, 2005.</td></tr>
+<tr><td class="label">[3]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id17">2</a>)</em> Tobias Loga, Nikolaus Diefenbach, Jens Knissel, and Rolf Born. <em>Ein vereinfachtes, statistisch abgesichertes Verfahren zur Erhebung von Gebäudedaten für die energetische Bewertung von Gebäuden</em>. Volume Bauforschung für die Praxis. Institut Wohnen und Umwelt GmbH, Darmstadt, 2005.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="kaag-march2008" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[4]</a></td><td>W.&nbsp;Kaag, T.&nbsp;Ummenhöfer, and M.&nbsp;N. Fisch. Forschungsprojekt energieeffiziente Sanierung von Bürogebäuden der 50er bis 70er Jahre - Erarbeitung einer Planungshilfe. 2008.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id6">[4]</a></td><td>W.&nbsp;Kaag, T.&nbsp;Ummenhöfer, and M.&nbsp;N. Fisch. Forschungsprojekt \dq energieeffiziente Sanierung von Bürogebäuden der 50er bis 70er Jahre - Erarbeitung einer Planungshilfe\dq . Braunschweig, 2008.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="bundesministeriumfurverkehrbauundstadtentwicklung-30-07-2009" rules="none">
@@ -330,15 +371,12 @@ area:</p>
         <li class="right" >
           <a href="teaser.Examples.html" title="Examples"
              >next</a> |</li>
-        <li class="right" >
-          <a href="teaser.Project.html" title="TEASER API - Project class"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.5.1 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.6.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2016-2017, RWTH Aachen University, E.ON Energy Research Center, Institute for Energy Efficienct Buildings and Indoor Climate.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &#169; Copyright 2016-2017, RWTH Aachen University, E.ON Energy Research Center, Institute for Energy Efficienct Buildings and Indoor Climate.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>

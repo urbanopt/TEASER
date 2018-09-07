@@ -1,0 +1,836 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>tabula germany &#8212; TEASER 0.6.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="urbanrenet" href="teaser.Logic.ArchetypeBuildings.urbanrenet.html" /> 
+  </head><body>
+<div class="headerStyle">
+<img src="_static/EBC_Logo.png" alt="EBC_Logo" />
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="teaser.Logic.ArchetypeBuildings.urbanrenet.html" title="urbanrenet"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.6.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="teaser.html" >TEASER modules</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="teaser.Logic.html" >logic</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="teaser.Logic.ArchetypeBuildings.html" accesskey="U">archetypebuildings</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">tabula germany</a><ul>
+<li><a class="reference internal" href="#module-teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse">singlefamilyhouse</a></li>
+<li><a class="reference internal" href="#module-teaser.logic.archetypebuildings.tabula.de.apartmentblock">apartmentblock</a></li>
+<li><a class="reference internal" href="#module-teaser.logic.archetypebuildings.tabula.de.multifamilyhouse">multifamilyhouse</a></li>
+<li><a class="reference internal" href="#module-teaser.logic.archetypebuildings.tabula.de.terracedhouse">terracedhouse</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="teaser.Logic.ArchetypeBuildings.urbanrenet.html"
+                        title="previous chapter">urbanrenet</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/teaser.Logic.ArchetypeBuildings.tabula.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="tabula-germany">
+<h1>tabula germany<a class="headerlink" href="#tabula-germany" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse">
+<span id="singlefamilyhouse"></span><h2>singlefamilyhouse<a class="headerlink" href="#module-teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse">
+<em class="property">class </em><code class="descclassname">teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.</code><code class="descname">SingleFamilyHouse</code><span class="sig-paren">(</span><em>parent</em>, <em>name=None</em>, <em>year_of_construction=None</em>, <em>number_of_floors=None</em>, <em>height_of_floors=None</em>, <em>net_leased_area=None</em>, <em>with_ahu=False</em>, <em>construction_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="teaser.Logic.ArchetypeBuildings.html#teaser.logic.archetypebuildings.residential.Residential" title="teaser.logic.archetypebuildings.residential.Residential"><code class="xref py py-class docutils literal notranslate"><span class="pre">teaser.logic.archetypebuildings.residential.Residential</span></code></a></p>
+<p>Archetype for German TABULA Single Family House.</p>
+<p>This is an archetype building for german single family house according to
+TABULA building typology (<a class="reference external" href="http://webtool.building-typology.eu/#bm">http://webtool.building-typology.eu/#bm</a>). As
+TABULA defines one reference building, whereas TEASER wants to provide a
+methodology to generate individual building information, this archetype
+underlies some assumptions. The made assumptions are explained in the
+following:</p>
+<p>Each building has four orientations for outer walls and windows (north,
+east, south and west), two orientations for rooftops (south and north), with
+tilt of 35 degree and one orientation for ground floors and one door (
+default
+orientation is west). The area of each surface is calculated using the
+product of the given net_leased_area and specific estimation factors. These
+estimation factors where build by dividing the given ‘surface area’ by the
+‘reference floor area’ in TABULA. The estimation factors are calculated for
+each building period (‘construction year class’). Please note that the
+number and height of the floors given in TEASER does not have any effect on
+the surface area for heat transmission, but is only used to calculate the
+interior wall area, which is not specified in TABULA at all. Further, TABULA
+does not specify any specific user profile, by default the SingleFamilyHouse
+class has exactly one usage zone, which is ‘Living’. TABULA also does not
+always specify the exact construction of building elements, but always
+provides a prescribed U-Value. We used the U-Value and the given material
+information to determine thickness of each layer and implemented it into
+elements XML (‘teaser.data.input.inputdata.TypeElements_TABULA_DE.xml’). The
+material properties have been taken from MASEA Material data base
+(<a class="reference external" href="http://www.masea-ensan.de/">http://www.masea-ensan.de/</a>). As there might be some differences in the
+assumptions for material properties from TABULA and MASEA the U-Value might
+not always be exactly the same as in TABULA but is always in an acceptable
+range. The U-Value has been calculated using combined constant values for
+interior and exterior heat transmission, we used a resistance of 0.17
+(m2*K)/W for outer walls, windows, flat roofs and doors; 0.34 (m2*K)/W  for
+ground floors to unheated cellars and 0.17 (m2*K)/W  to direct ground
+coupled floors, 0.21 (m2*K)/W  was taken for pitched roofs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>parent: Project()</strong></dt>
+<dd><p class="first last">The parent class of this object, the Project the Building belongs to.
+Allows for better control of hierarchical structures. If not None it
+adds this Building instance to Project.buildings.
+(default: None)</p>
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Individual name</p>
+</dd>
+<dt><strong>year_of_construction</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Year of first construction</p>
+</dd>
+<dt><strong>height_of_floors</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float [m]</span></dt>
+<dd><p class="first last">Average height of the buildings’ floors</p>
+</dd>
+<dt><strong>number_of_floors</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of building’s floors above ground</p>
+</dd>
+<dt><strong>net_leased_area</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float [m2]</span></dt>
+<dd><p class="first last">Total net leased area of building. This is area is NOT the footprint
+of a building</p>
+</dd>
+<dt><strong>with_ahu</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Boolean</span></dt>
+<dd><p class="first last">If set to True, an empty instance of BuildingAHU is instantiated and
+assigned to attribute central_ahu. This instance holds information for
+central Air Handling units. Default is False.</p>
+</dd>
+<dt><strong>construction_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first">Construction type of used wall constructions default is “existing
+state”</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>existing state:</dt>
+<dd><p class="first last">construction of walls according to existing state in TABULA</p>
+</dd>
+<dt>usual refurbishment:</dt>
+<dd><p class="first last">construction of walls according to usual refurbishment in TABULA</p>
+</dd>
+<dt>advanced refurbishment:</dt>
+<dd><p class="first last">construction of walls according to advanced refurbishment in
+TABULA</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>central_ahu</strong></dt>
+<dd></dd>
+<dt><strong>construction_type</strong></dt>
+<dd></dd>
+<dt><strong>height_of_floors</strong></dt>
+<dd></dd>
+<dt><strong>merge_windows_calc</strong></dt>
+<dd></dd>
+<dt><strong>name</strong></dt>
+<dd></dd>
+<dt><strong>net_leased_area</strong></dt>
+<dd></dd>
+<dt><strong>number_of_elements_calc</strong></dt>
+<dd></dd>
+<dt><strong>number_of_floors</strong></dt>
+<dd></dd>
+<dt><strong>outer_area</strong></dt>
+<dd></dd>
+<dt><strong>parent</strong></dt>
+<dd></dd>
+<dt><strong>thermal_zones</strong></dt>
+<dd></dd>
+<dt><strong>used_library_calc</strong></dt>
+<dd></dd>
+<dt><strong>window_area</strong></dt>
+<dd></dd>
+<dt><strong>with_ahu</strong></dt>
+<dd></dd>
+<dt><strong>year_of_construction</strong></dt>
+<dd></dd>
+<dt><strong>year_of_retrofit</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_zone</span></code>(thermal_zone)</td>
+<td>Adds a thermal zone to the corresponding list</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_building_parameter</span></code>([…])</td>
+<td>calc all building parameters</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_outer_area_dict</span></code>()</td>
+<td>Fills the attribute outer_area</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_window_area_dict</span></code>()</td>
+<td>Fills the attribute</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse.generate_archetype" title="teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse.generate_archetype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_archetype</span></code></a>()</td>
+<td>Generates a SingleFamilyHouse archetype buildings</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_footprint_gml</span></code>()</td>
+<td>Gets the footprint surface of a building from CityGML data</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_inner_wall_area</span></code>()</td>
+<td>Get aggregated inner wall area</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_outer_wall_area</span></code>(orientation)</td>
+<td>Get aggregated wall area of one orientation</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_window_area</span></code>(orientation)</td>
+<td>Get aggregated window area of one orientation</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">retrofit_building</span></code>([year_of_retrofit,&nbsp;…])</td>
+<td>Retrofits all zones in the building</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotate_building</span></code>(angle)</td>
+<td>Rotates the building to a given angle</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_gml_attributes</span></code>([height_of_floor])</td>
+<td>Sets building attributes from CityGML data</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_height_gml</span></code>()</td>
+<td>Calculates the height of a building from CityGML data</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_outer_wall_area</span></code>(new_area,&nbsp;orientation)</td>
+<td>Outer area wall setter</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_window_area</span></code>(new_area,&nbsp;orientation)</td>
+<td>Window area setter</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse.generate_archetype">
+<code class="descname">generate_archetype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse.generate_archetype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a SingleFamilyHouse archetype buildings</p>
+<p>With given values, this function generates an archetype building for
+Tabula Single Family House.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-teaser.logic.archetypebuildings.tabula.de.apartmentblock">
+<span id="apartmentblock"></span><h2>apartmentblock<a class="headerlink" href="#module-teaser.logic.archetypebuildings.tabula.de.apartmentblock" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="teaser.logic.archetypebuildings.tabula.de.apartmentblock.ApartmentBlock">
+<em class="property">class </em><code class="descclassname">teaser.logic.archetypebuildings.tabula.de.apartmentblock.</code><code class="descname">ApartmentBlock</code><span class="sig-paren">(</span><em>parent</em>, <em>name=None</em>, <em>year_of_construction=None</em>, <em>number_of_floors=None</em>, <em>height_of_floors=None</em>, <em>net_leased_area=None</em>, <em>with_ahu=False</em>, <em>construction_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.logic.archetypebuildings.tabula.de.apartmentblock.ApartmentBlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse" title="teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse"><code class="xref py py-class docutils literal notranslate"><span class="pre">teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse</span></code></a></p>
+<p>Archetype for TABULA Apartment Block</p>
+<p>Archetype according to TABULA building typology
+(<a class="reference external" href="http://webtool.building-typology.eu/#bm">http://webtool.building-typology.eu/#bm</a>).</p>
+<dl class="docutils">
+<dt>Description of:</dt>
+<dd><ul class="first simple">
+<li>estimation factors</li>
+<li>always 4 walls, 1 roof, 1 floor, 4 windows, one door (default</li>
+</ul>
+<p class="last">orientation?)
+- how we calculate facade and window area
+- calculate u-values
+- zones (one zone)
+- differences between TABULA und our approach (net floor area, height
+and number of storeys)
+- how to proceed with rooftops (keep them as flat roofs or pitched
+roofs? what orientation?)</p>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>parent: Project()</strong></dt>
+<dd><p class="first last">The parent class of this object, the Project the Building belongs to.
+Allows for better control of hierarchical structures. If not None it
+adds this Building instance to Project.buildings.
+(default: None)</p>
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Individual name</p>
+</dd>
+<dt><strong>year_of_construction</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Year of first construction</p>
+</dd>
+<dt><strong>height_of_floors</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float [m]</span></dt>
+<dd><p class="first last">Average height of the buildings’ floors</p>
+</dd>
+<dt><strong>number_of_floors</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of building’s floors above ground</p>
+</dd>
+<dt><strong>net_leased_area</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float [m2]</span></dt>
+<dd><p class="first last">Total net leased area of building. This is area is NOT the footprint
+of a building</p>
+</dd>
+<dt><strong>with_ahu</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Boolean</span></dt>
+<dd><p class="first last">If set to True, an empty instance of BuildingAHU is instantiated and
+assigned to attribute central_ahu. This instance holds information for
+central Air Handling units. Default is False.</p>
+</dd>
+<dt><strong>construction_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first">Construction type of used wall constructions default is “existing
+state”</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>existing state:</dt>
+<dd><p class="first last">construction of walls according to existing state in TABULA</p>
+</dd>
+<dt>usual refurbishment:</dt>
+<dd><p class="first last">construction of walls according to usual refurbishment in
+TABULA</p>
+</dd>
+<dt>advanced refurbishment:</dt>
+<dd><p class="first last">construction of walls according to advanced refurbishment in
+TABULA</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>central_ahu</strong></dt>
+<dd></dd>
+<dt><strong>construction_type</strong></dt>
+<dd></dd>
+<dt><strong>height_of_floors</strong></dt>
+<dd></dd>
+<dt><strong>merge_windows_calc</strong></dt>
+<dd></dd>
+<dt><strong>name</strong></dt>
+<dd></dd>
+<dt><strong>net_leased_area</strong></dt>
+<dd></dd>
+<dt><strong>number_of_elements_calc</strong></dt>
+<dd></dd>
+<dt><strong>number_of_floors</strong></dt>
+<dd></dd>
+<dt><strong>outer_area</strong></dt>
+<dd></dd>
+<dt><strong>parent</strong></dt>
+<dd></dd>
+<dt><strong>thermal_zones</strong></dt>
+<dd></dd>
+<dt><strong>used_library_calc</strong></dt>
+<dd></dd>
+<dt><strong>window_area</strong></dt>
+<dd></dd>
+<dt><strong>with_ahu</strong></dt>
+<dd></dd>
+<dt><strong>year_of_construction</strong></dt>
+<dd></dd>
+<dt><strong>year_of_retrofit</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_zone</span></code>(thermal_zone)</td>
+<td>Adds a thermal zone to the corresponding list</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_building_parameter</span></code>([…])</td>
+<td>calc all building parameters</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_outer_area_dict</span></code>()</td>
+<td>Fills the attribute outer_area</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_window_area_dict</span></code>()</td>
+<td>Fills the attribute</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_archetype</span></code>()</td>
+<td>Generates a SingleFamilyHouse archetype buildings</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_footprint_gml</span></code>()</td>
+<td>Gets the footprint surface of a building from CityGML data</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_inner_wall_area</span></code>()</td>
+<td>Get aggregated inner wall area</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_outer_wall_area</span></code>(orientation)</td>
+<td>Get aggregated wall area of one orientation</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_window_area</span></code>(orientation)</td>
+<td>Get aggregated window area of one orientation</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">retrofit_building</span></code>([year_of_retrofit,&nbsp;…])</td>
+<td>Retrofits all zones in the building</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotate_building</span></code>(angle)</td>
+<td>Rotates the building to a given angle</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_gml_attributes</span></code>([height_of_floor])</td>
+<td>Sets building attributes from CityGML data</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_height_gml</span></code>()</td>
+<td>Calculates the height of a building from CityGML data</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_outer_wall_area</span></code>(new_area,&nbsp;orientation)</td>
+<td>Outer area wall setter</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_window_area</span></code>(new_area,&nbsp;orientation)</td>
+<td>Window area setter</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-teaser.logic.archetypebuildings.tabula.de.multifamilyhouse">
+<span id="multifamilyhouse"></span><h2>multifamilyhouse<a class="headerlink" href="#module-teaser.logic.archetypebuildings.tabula.de.multifamilyhouse" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="teaser.logic.archetypebuildings.tabula.de.multifamilyhouse.MultiFamilyHouse">
+<em class="property">class </em><code class="descclassname">teaser.logic.archetypebuildings.tabula.de.multifamilyhouse.</code><code class="descname">MultiFamilyHouse</code><span class="sig-paren">(</span><em>parent</em>, <em>name=None</em>, <em>year_of_construction=None</em>, <em>number_of_floors=None</em>, <em>height_of_floors=None</em>, <em>net_leased_area=None</em>, <em>with_ahu=False</em>, <em>construction_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.logic.archetypebuildings.tabula.de.multifamilyhouse.MultiFamilyHouse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse" title="teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse"><code class="xref py py-class docutils literal notranslate"><span class="pre">teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse</span></code></a></p>
+<p>Archetype for TABULA Multi Family House</p>
+<p>Archetype according to TABULA building typology
+(<a class="reference external" href="http://webtool.building-typology.eu/#bm">http://webtool.building-typology.eu/#bm</a>).</p>
+<dl class="docutils">
+<dt>Description of:</dt>
+<dd><ul class="first simple">
+<li>estimation factors</li>
+<li>always 4 walls, 1 roof, 1 floor, 4 windows, one door (default</li>
+</ul>
+<p class="last">orientation?)
+- how we calculate facade and window area
+- calculate u-values
+- zones (one zone)
+- differences between TABULA und our approach (net floor area, height
+and number of storeys)
+- how to proceed with rooftops (keep them as flat roofs or pitched
+roofs? what orientation?)</p>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>parent: Project()</strong></dt>
+<dd><p class="first last">The parent class of this object, the Project the Building belongs to.
+Allows for better control of hierarchical structures. If not None it
+adds this Building instance to Project.buildings.
+(default: None)</p>
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Individual name</p>
+</dd>
+<dt><strong>year_of_construction</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Year of first construction</p>
+</dd>
+<dt><strong>height_of_floors</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float [m]</span></dt>
+<dd><p class="first last">Average height of the buildings’ floors</p>
+</dd>
+<dt><strong>number_of_floors</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of building’s floors above ground</p>
+</dd>
+<dt><strong>net_leased_area</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float [m2]</span></dt>
+<dd><p class="first last">Total net leased area of building. This is area is NOT the footprint
+of a building</p>
+</dd>
+<dt><strong>with_ahu</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Boolean</span></dt>
+<dd><p class="first last">If set to True, an empty instance of BuildingAHU is instantiated and
+assigned to attribute central_ahu. This instance holds information for
+central Air Handling units. Default is False.</p>
+</dd>
+<dt><strong>construction_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first">Construction type of used wall constructions default is “existing
+state”</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>existing state:</dt>
+<dd><p class="first last">construction of walls according to existing state in TABULA</p>
+</dd>
+<dt>usual refurbishment:</dt>
+<dd><p class="first last">construction of walls according to usual refurbishment in
+TABULA</p>
+</dd>
+<dt>advanced refurbishment:</dt>
+<dd><p class="first last">construction of walls according to advanced refurbishment in
+TABULA</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>central_ahu</strong></dt>
+<dd></dd>
+<dt><strong>construction_type</strong></dt>
+<dd></dd>
+<dt><strong>height_of_floors</strong></dt>
+<dd></dd>
+<dt><strong>merge_windows_calc</strong></dt>
+<dd></dd>
+<dt><strong>name</strong></dt>
+<dd></dd>
+<dt><strong>net_leased_area</strong></dt>
+<dd></dd>
+<dt><strong>number_of_elements_calc</strong></dt>
+<dd></dd>
+<dt><strong>number_of_floors</strong></dt>
+<dd></dd>
+<dt><strong>outer_area</strong></dt>
+<dd></dd>
+<dt><strong>parent</strong></dt>
+<dd></dd>
+<dt><strong>thermal_zones</strong></dt>
+<dd></dd>
+<dt><strong>used_library_calc</strong></dt>
+<dd></dd>
+<dt><strong>window_area</strong></dt>
+<dd></dd>
+<dt><strong>with_ahu</strong></dt>
+<dd></dd>
+<dt><strong>year_of_construction</strong></dt>
+<dd></dd>
+<dt><strong>year_of_retrofit</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_zone</span></code>(thermal_zone)</td>
+<td>Adds a thermal zone to the corresponding list</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_building_parameter</span></code>([…])</td>
+<td>calc all building parameters</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_outer_area_dict</span></code>()</td>
+<td>Fills the attribute outer_area</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_window_area_dict</span></code>()</td>
+<td>Fills the attribute</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_archetype</span></code>()</td>
+<td>Generates a SingleFamilyHouse archetype buildings</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_footprint_gml</span></code>()</td>
+<td>Gets the footprint surface of a building from CityGML data</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_inner_wall_area</span></code>()</td>
+<td>Get aggregated inner wall area</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_outer_wall_area</span></code>(orientation)</td>
+<td>Get aggregated wall area of one orientation</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_window_area</span></code>(orientation)</td>
+<td>Get aggregated window area of one orientation</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">retrofit_building</span></code>([year_of_retrofit,&nbsp;…])</td>
+<td>Retrofits all zones in the building</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotate_building</span></code>(angle)</td>
+<td>Rotates the building to a given angle</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_gml_attributes</span></code>([height_of_floor])</td>
+<td>Sets building attributes from CityGML data</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_height_gml</span></code>()</td>
+<td>Calculates the height of a building from CityGML data</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_outer_wall_area</span></code>(new_area,&nbsp;orientation)</td>
+<td>Outer area wall setter</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_window_area</span></code>(new_area,&nbsp;orientation)</td>
+<td>Window area setter</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-teaser.logic.archetypebuildings.tabula.de.terracedhouse">
+<span id="terracedhouse"></span><h2>terracedhouse<a class="headerlink" href="#module-teaser.logic.archetypebuildings.tabula.de.terracedhouse" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="teaser.logic.archetypebuildings.tabula.de.terracedhouse.TerracedHouse">
+<em class="property">class </em><code class="descclassname">teaser.logic.archetypebuildings.tabula.de.terracedhouse.</code><code class="descname">TerracedHouse</code><span class="sig-paren">(</span><em>parent</em>, <em>name=None</em>, <em>year_of_construction=None</em>, <em>number_of_floors=None</em>, <em>height_of_floors=None</em>, <em>net_leased_area=None</em>, <em>with_ahu=False</em>, <em>construction_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#teaser.logic.archetypebuildings.tabula.de.terracedhouse.TerracedHouse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse" title="teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse"><code class="xref py py-class docutils literal notranslate"><span class="pre">teaser.logic.archetypebuildings.tabula.de.singlefamilyhouse.SingleFamilyHouse</span></code></a></p>
+<p>Archetype for TABULA Single Family House</p>
+<p>Archetype according to TABULA building typology
+(<a class="reference external" href="http://webtool.building-typology.eu/#bm">http://webtool.building-typology.eu/#bm</a>).</p>
+<dl class="docutils">
+<dt>Description of:</dt>
+<dd><ul class="first simple">
+<li>estimation factors</li>
+<li>always 4 walls, 1 roof, 1 floor, 4 windows, one door (default</li>
+</ul>
+<p class="last">orientation?)
+- how we calculate facade and window area
+- calculate u-values
+- zones (one zone)
+- differences between TABULA und our approach (net floor area, height
+and number of storeys)
+- how to proceed with rooftops (keep them as flat roofs or pitched
+roofs? what orientation?)</p>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>parent: Project()</strong></dt>
+<dd><p class="first last">The parent class of this object, the Project the Building belongs to.
+Allows for better control of hierarchical structures. If not None it
+adds this Building instance to Project.buildings.
+(default: None)</p>
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Individual name</p>
+</dd>
+<dt><strong>year_of_construction</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Year of first construction</p>
+</dd>
+<dt><strong>height_of_floors</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float [m]</span></dt>
+<dd><p class="first last">Average height of the buildings’ floors</p>
+</dd>
+<dt><strong>number_of_floors</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of building’s floors above ground</p>
+</dd>
+<dt><strong>net_leased_area</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float [m2]</span></dt>
+<dd><p class="first last">Total net leased area of building. This is area is NOT the footprint
+of a building</p>
+</dd>
+<dt><strong>with_ahu</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Boolean</span></dt>
+<dd><p class="first last">If set to True, an empty instance of BuildingAHU is instantiated and
+assigned to attribute central_ahu. This instance holds information for
+central Air Handling units. Default is False.</p>
+</dd>
+<dt><strong>construction_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first">Construction type of used wall constructions default is “existing
+state”</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>existing state:</dt>
+<dd><p class="first last">construction of walls according to existing state in TABULA</p>
+</dd>
+<dt>usual refurbishment:</dt>
+<dd><p class="first last">construction of walls according to usual refurbishment in
+TABULA</p>
+</dd>
+<dt>advanced refurbishment:</dt>
+<dd><p class="first last">construction of walls according to advanced refurbishment in
+TABULA</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>central_ahu</strong></dt>
+<dd></dd>
+<dt><strong>construction_type</strong></dt>
+<dd></dd>
+<dt><strong>height_of_floors</strong></dt>
+<dd></dd>
+<dt><strong>merge_windows_calc</strong></dt>
+<dd></dd>
+<dt><strong>name</strong></dt>
+<dd></dd>
+<dt><strong>net_leased_area</strong></dt>
+<dd></dd>
+<dt><strong>number_of_elements_calc</strong></dt>
+<dd></dd>
+<dt><strong>number_of_floors</strong></dt>
+<dd></dd>
+<dt><strong>outer_area</strong></dt>
+<dd></dd>
+<dt><strong>parent</strong></dt>
+<dd></dd>
+<dt><strong>thermal_zones</strong></dt>
+<dd></dd>
+<dt><strong>used_library_calc</strong></dt>
+<dd></dd>
+<dt><strong>window_area</strong></dt>
+<dd></dd>
+<dt><strong>with_ahu</strong></dt>
+<dd></dd>
+<dt><strong>year_of_construction</strong></dt>
+<dd></dd>
+<dt><strong>year_of_retrofit</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_zone</span></code>(thermal_zone)</td>
+<td>Adds a thermal zone to the corresponding list</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_building_parameter</span></code>([…])</td>
+<td>calc all building parameters</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_outer_area_dict</span></code>()</td>
+<td>Fills the attribute outer_area</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_window_area_dict</span></code>()</td>
+<td>Fills the attribute</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_archetype</span></code>()</td>
+<td>Generates a SingleFamilyHouse archetype buildings</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_footprint_gml</span></code>()</td>
+<td>Gets the footprint surface of a building from CityGML data</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_inner_wall_area</span></code>()</td>
+<td>Get aggregated inner wall area</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_outer_wall_area</span></code>(orientation)</td>
+<td>Get aggregated wall area of one orientation</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_window_area</span></code>(orientation)</td>
+<td>Get aggregated window area of one orientation</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">retrofit_building</span></code>([year_of_retrofit,&nbsp;…])</td>
+<td>Retrofits all zones in the building</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotate_building</span></code>(angle)</td>
+<td>Rotates the building to a given angle</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_gml_attributes</span></code>([height_of_floor])</td>
+<td>Sets building attributes from CityGML data</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_height_gml</span></code>()</td>
+<td>Calculates the height of a building from CityGML data</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_outer_wall_area</span></code>(new_area,&nbsp;orientation)</td>
+<td>Outer area wall setter</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_window_area</span></code>(new_area,&nbsp;orientation)</td>
+<td>Window area setter</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="teaser.Logic.ArchetypeBuildings.urbanrenet.html" title="urbanrenet"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">TEASER 0.6.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="teaser.html" >TEASER modules</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="teaser.Logic.html" >logic</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="teaser.Logic.ArchetypeBuildings.html" >archetypebuildings</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2017, RWTH Aachen University, E.ON Energy Research Center, Institute for Energy Efficienct Buildings and Indoor Climate.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
+    </div>
+  </body>
+</html>
