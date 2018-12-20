@@ -1065,7 +1065,7 @@ class TwoElement(object):
         ua_value_gf_temp : float [W/(m2*K)]
             UA Value of all GroundFloors
         """
-        self.heat_load = 0.0
+
         effective_ventilation = max([self.thermal_zone.ventilation_rate,
                                      self.thermal_zone.infiltration_rate])
         ua_value_gf_temp = sum(
