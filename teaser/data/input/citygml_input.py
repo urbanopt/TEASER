@@ -1,6 +1,3 @@
-# Created April 2016
-# TEASER Development Team
-
 """CityGML
 
 This module contains function to load Buildings in the non proprietary
@@ -47,88 +44,104 @@ def load_gml(path, prj):
     gml_bind = citygml.CreateFromDocument(xml_file.read())
 
     for i, city_object in enumerate(gml_bind.featureMember):
+
         if city_object.Feature.consistsOfBuildingPart:
             for part in city_object.Feature.consistsOfBuildingPart:
-                if part.BuildingPart.function:
-                    if part.BuildingPart.function[0].value() == "1000":
-                        bld = SingleFamilyDwelling(
-                            parent=prj,
-                            name=part.BuildingPart.id)
-                    elif part.BuildingPart.function[0].value() == "1120":
-                        bld = Office(
-                            parent=prj,
-                            name=part.BuildingPart.id)
-                    else:
-                        bld = Building(
-                            parent=prj,
-                            name=part.BuildingPart.id)
+                bld = Office(
+                    parent=prj,
+                    name=part.BuildingPart.id)
+                # if city_object.Feature.function:
+                #     if city_object.Feature.function[0].value() == "1000":
+                #         bld = SingleFamilyDwelling(
+                #             parent=prj,
+                #             name=part.BuildingPart.id)
+                #     elif city_object.Feature.function[0].value() == "1120":
+                #         bld = Office(
+                #             parent=prj,
+                #             name=part.BuildingPart.id)
+                #     else:
+                #         bld = Building(
+                #             parent=prj,
+                #             name=part.BuildingPart.id)
 
-                else:
-                    bld = Building(
-                        parent=prj,
-                        name=part.BuildingPart.id)
+                # else:
+                #     bld = Building(
+                #         parent=prj,
+                #         name=part.BuildingPart.id)
                 _create_building_part(bld=bld, part=part)
                 _set_attributes(bld=bld, gml_bld=part.BuildingPart)
                 bld.set_height_gml()
+                try:
+                    bld.set_gml_attributes()
+                except UserWarning:
+                    print("bld.set_gml_attributes() did not work")
+                try:
+                    bld.generate_from_gml()
+                except (UserWarning, AttributeError):
+                    print("bld.generate_from_gml() did not work for building ",
+                          str(bld.name))
         else:
-
-            if city_object.Feature.function:
-                if city_object.Feature.function[0].value() == "1000":
-                    bld = SingleFamilyDwelling(
-                        parent=prj,
-                        name=city_object.Feature.id)
-
-                elif city_object.Feature.function[0].value() == "1120":
-                    bld = Office(
-                        parent=prj,
-                        name=city_object.Feature.id)
-                else:
-                    bld = Building(
-                        parent=prj,
-                        name=city_object.Feature.id)
-            else:
-
-                bld = Building(
-                    parent=prj,
-                    name=city_object.Feature.id)
-
+            bld = Office(
+                parent=prj,
+                name=city_object.Feature.id)
             _create_building(bld=bld, city_object=city_object)
             _set_attributes(bld=bld, gml_bld=city_object.Feature)
             bld.set_height_gml()
+            try:
+                bld.set_gml_attributes()
+            except UserWarning:
+                print("bld.set_gml_attributes() did not work")
+            try:
+                bld.generate_from_gml()
+            except (UserWarning, AttributeError):
+                print("bld.generate_from_gml() did not work for building ",
+                      str(bld.name))
 
-        try:
-            bld.set_gml_attributes()
-        except UserWarning:
-            print("bld.set_gml_attributes() did not work")
-            pass
-        try:
-            bld.generate_from_gml()
-        except (UserWarning, AttributeError):
-            print("bld.generate_from_gml() did not work for building ",
-                  str(bld.name))
-            pass
+            # if city_object.Feature.function:
+            #     if city_object.Feature.function[0].value() == "1000":
+            #         bld = SingleFamilyDwelling(
+            #             parent=prj,
+            #             name=city_object.Feature.id)
+            #
+            #     elif city_object.Feature.function[0].value() == "1120":
+            #         bld = Office(
+            #             parent=prj,
+            #             name=city_object.Feature.id)
+            #     else:
+            #         bld = Building(
+            #             parent=prj,
+            #             name=city_object.Feature.id)
+            # else:
+            #
+            #     bld = Building(
+            #         parent=prj,
+            #         name=city_object.Feature.id)
+            #
+            # _create_building(bld=bld, city_object=city_object)
+            # _set_attributes(bld=bld, gml_bld=city_object.Feature)
+            # bld.set_height_gml()
 
 
 def _set_attributes(bld, gml_bld):
     """tries to set attributes for type building generation
     """
+    # try:
+    #     bld.name = gml_bld.name[0].value()
+    # except (UserWarning, IndexError):
+    #     print("no name specified in gml file")
+    #     pass
     try:
-        bld.name = gml_bld.name[0].value()
-    except (UserWarning, IndexError):
-        print("no name specified in gml file")
-        pass
-    try:
-        bld.number_of_floors = gml_bld.storeysAboveGround
+        bld.number_of_floors = 3
     except (UserWarning, AttributeError):
         print("no storeysAboveGround specified in gml file")
         pass
     try:
-        bld.height_of_floors = gml_bld.storeyHeightsAboveGround.value()[0]
+        bld.height_of_floors = 3
     except (UserWarning, AttributeError):
         print("no storeyHeightsAboveGround specified in gml file")
         pass
     try:
-        bld.year_of_construction = gml_bld.yearOfConstruction.year
+        bld.year_of_construction = 1988
     except (UserWarning, AttributeError):
         print("no yearOfConstruction specified in gml file")
         pass
