@@ -330,7 +330,7 @@ class BoundaryConditions(UseConditions):
         self.winter_reduction = [0.5, 273.15, 273.15 + 10]
 
         self.shading_max_irr = 100
-        self.shading_g_total = 1.0
+        self.shading_g_total = 0.3
 
         self.v_flow_air_curtain = 0.0
         self.delta_t_air_curtain = 0.0
