@@ -7,6 +7,7 @@ This module contains function to call Templates for AixLib model generation
 """
 
 import os
+import shutil
 import warnings
 from mako.template import Template
 from mako.lookup import TemplateLookup
@@ -87,6 +88,9 @@ def export_multizone(buildings, prj, path=None):
         filename=utilities.get_full_path(
             "data/output/modelicatemplate/AixLib/AixLib_Multizone"),
         lookup=lookup)
+
+    resources_path = os.path.join(path, "Resources")
+    utilities.create_path(utilities.get_full_path(resources_path))
 
     uses = [
         'Modelica(version="' + prj.modelica_info.version + '")',
@@ -178,8 +182,36 @@ def export_multizone(buildings, prj, path=None):
             addition=bldg.name + "_",
             extra=None)
 
+        if _check_weather_path(bldg.parent.weather_file_path):
+            shutil.copyfile(src=bldg.parent.weather_file_path, dst=resources_path)
+
     print("Exports can be found here:")
     print(path)
+
+
+def _check_weather_path(path):
+    """Check whether the weather path references a file directly or via modelica://
+
+    Parameters
+    ----------
+    path : str
+        path of the weather file
+
+    Returns
+    -------
+    is_absolute : boolean
+        True for absolute paths, False for `modelica://...`-paths
+    """
+
+    if path.startswith("modelica://"):
+        is_absolute = False
+    else:
+        if os.path.exists(path):
+            is_absolute = True
+        else:
+            raise ValueError("The weather file path does not point to a known file")
+
+    return is_absolute
 
 
 def _help_package(path, name, uses=None, within=None):
