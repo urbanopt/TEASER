@@ -149,9 +149,20 @@ def export_multizone(buildings, prj, path=None):
         out_file = open(utilities.get_full_path
                         (os.path.join(bldg_path, bldg.name + ".mo")), 'w')
 
+        if _check_weather_path(bldg.parent.weather_file_path):
+            dst_weather = os.path.join(
+                resources_path, os.path.split(bldg.parent.weather_file_path)[-1]
+            )
+            shutil.copyfile(src=bldg.parent.weather_file_path, dst=dst_weather)
+            weather_path_modelica = _convert_weather_path(
+                path=bldg.parent.weather_file_path, name=prj.name
+            )
+        else:
+            weather_path_modelica = bldg.parent.weather_file_path
+
         out_file.write(model_template.render_unicode(
             bldg=bldg,
-            weather=bldg.parent.weather_file_path,
+            weather=weather_path_modelica,
             modelica_info=bldg.parent.modelica_info))
         out_file.close()
 
@@ -182,9 +193,6 @@ def export_multizone(buildings, prj, path=None):
             addition=bldg.name + "_",
             extra=None)
 
-        if _check_weather_path(bldg.parent.weather_file_path):
-            shutil.copyfile(src=bldg.parent.weather_file_path, dst=resources_path)
-
     print("Exports can be found here:")
     print(path)
 
@@ -194,7 +202,7 @@ def _check_weather_path(path):
 
     Parameters
     ----------
-    path : str
+    path : string
         path of the weather file
 
     Returns
@@ -212,6 +220,26 @@ def _check_weather_path(path):
             raise ValueError("The weather file path does not point to a known file")
 
     return is_absolute
+
+def _convert_weather_path(path, name):
+    """Convert from absolute weather path to `modelica://...`-notation
+
+    Parameters
+    ----------
+    path : string
+        path of the weather file
+    name : string
+        name of the Modelica package
+
+    Returns
+    -------
+    path_modelica : string
+        path in `modelica://...`-notation
+    """
+
+    path_modelica = "modelica://" + name + "/Resources/" + os.path.split(path)[-1]
+
+    return path_modelica
 
 
 def _help_package(path, name, uses=None, within=None):
