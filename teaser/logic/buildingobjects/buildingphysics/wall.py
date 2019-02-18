@@ -314,9 +314,12 @@ class Wall(BuildingElement):
             elif 2009 <= year_of_retrofit <= 2013:
                 self.insulate_wall(material)
                 calc_u = 0.24 * self.area
-            elif year_of_retrofit >= 2014:
+            elif 2014 <= year_of_retrofit <= 2018:
                 self.insulate_wall(material)
                 calc_u = 0.24 * self.area
+            elif year_of_retrofit >= 2019:
+                self.insulate_wall(material)
+                calc_u = 0.12 * self.area
 
         elif type(self).__name__ == 'Rooftop':
 
@@ -335,9 +338,12 @@ class Wall(BuildingElement):
             elif 2009 <= year_of_retrofit <= 2013:
                 self.insulate_wall(material)
                 calc_u = 0.2 * self.area
-            elif year_of_retrofit >= 2014:
+            elif 2014 <= year_of_retrofit <= 2018:
                 self.insulate_wall(material)
                 calc_u = 0.2 * self.area
+            elif year_of_retrofit >= 2019:
+                self.insulate_wall(material)
+                calc_u = 0.1 * self.area
 
         if type(self).__name__ == 'GroundFloor':
 
@@ -356,9 +362,12 @@ class Wall(BuildingElement):
             elif 2009 <= year_of_retrofit <= 2013:
                 self.insulate_wall(material)
                 calc_u = 0.3 * self.area
-            elif year_of_retrofit >= 2014:
+            elif 2014 <= year_of_retrofit <= 2018:
                 self.insulate_wall(material)
                 calc_u = 0.3 * self.area
+            elif year_of_retrofit >= 2019:
+                self.insulate_wall(material)
+                calc_u = 0.12 * self.area
 
         r_conduc = 0
 
