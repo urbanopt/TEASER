@@ -12,6 +12,7 @@ from teaser.logic.buildingobjects.buildingphysics.rooftop import Rooftop
 from teaser.logic.buildingobjects.buildingphysics.window import Window
 from teaser.logic.buildingobjects.buildingphysics.door import Door
 from teaser.logic.buildingobjects.thermalzone import ThermalZone
+from teaser.data.dataclass import DataClass
 
 
 class SingleFamilyHouse(Residential):
@@ -332,6 +333,10 @@ class SingleFamilyHouse(Residential):
         With given values, this function generates an archetype building for
         Tabula Single Family House.
         """
+        if self.parent.data.used_statistic == "iwu":
+            self.parent.data = DataClass(used_statistic="tabula_de")
+        else:
+            pass
         self.thermal_zones = None
         self._check_year_of_construction()
         # help area for the correct building area setting while using typeBldgs
