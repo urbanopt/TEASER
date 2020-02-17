@@ -1,3 +1,5 @@
+# THIS FORKED VERSION IS NOT CURRENTLY USED. USE VERSION FOUND ON MAIN TEASER SITE: https://github.com/RWTH-EBC/TEASER
+
 ![E.ON EBC RWTH Aachen University](./doc/_static/EBC_Logo.png)
 
 # TEASER - Tool for Energy Analysis and Simulation for Efficient Retrofit
